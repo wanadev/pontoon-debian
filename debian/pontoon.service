@@ -1,0 +1,13 @@
+[Unit]
+Description=Pontoon
+
+[Service]
+Type=simple
+User=pontoon
+Group=pontoon
+Restart=on-failure
+Environment=DOTENV_PATH=/etc/opt/pontoon.env
+ExecStart=/opt/pontoon/current/__env__/bin/gunicorn --chdir /opt/pontoon/current/ pontoon.wsgi:application --bind 127.0.0.1:8000
+
+[Install]
+WantedBy=multi-user.target
