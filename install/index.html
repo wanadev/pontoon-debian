@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Requirements" href="requirements.html" />
-    <link rel="prev" title="Getting or Building Pontoon" href="../release-tarball.html" /> 
+    <link rel="prev" title="Getting Pontoon" href="../release-tarball.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,7 +87,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../foreword.html">Foreword</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release-tarball.html">Getting or Building Pontoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-tarball.html">Getting Pontoon</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installing Pontoon on Debian and Ubuntu</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="requirements.html">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="postgresql.html">PostgreSQL</a></li>
@@ -169,15 +169,21 @@
             
   <div class="section" id="installing-pontoon-on-debian-and-ubuntu">
 <h1>Installing Pontoon on Debian and Ubuntu<a class="headerlink" href="#installing-pontoon-on-debian-and-ubuntu" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+<p>In this section we will see how to install a fresh Pontoon install on Debian
+and Ubuntu.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If not otherwise specified, commands of this manual must be run as <code class="docutils literal notranslate"><span class="pre">root</span></code>.</p>
+</div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="postgresql.html">PostgreSQL</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="postgresql.html#installing-postgresql">Installing PostgreSQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql.html#configuring-postgresql">Configuring PostgreSQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql.html#creating-the-pontoon-s-database-and-user">Creating the Pontoon’s Database and User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postgresql.html#connecting-to-the-postgresql-console">Connecting to the PostgreSQL Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postgresql.html#creating-the-pontoon-s-database">Creating the Pontoon’s Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postgresql.html#creating-the-pontoon-s-user">Creating the Pontoon’s User</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pontoon.html">Pontoon</a><ul>
@@ -201,7 +207,7 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="requirements.html" class="btn btn-neutral float-right" title="Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../release-tarball.html" class="btn btn-neutral float-left" title="Getting or Building Pontoon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../release-tarball.html" class="btn btn-neutral float-left" title="Getting Pontoon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

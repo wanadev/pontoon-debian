@@ -58,29 +58,7 @@ Targeted Systems
 
 Pontoon Debian currently targets the following systems:
 
-+---------------------------+-----------------------------+----------+------------+
-| Distribution              | Distribution End of Support | Python   | PostgreSQL |
-+===========================+=============================+==========+============+
-| Debian 10 (buster)        | → 2024-06                   | 3.7      | 11         |
-+---------------------------+-----------------------------+----------+------------+
-| Debian 11 (bullseye)      | → ?                         | 3.9      | 13         |
-+---------------------------+-----------------------------+----------+------------+
-| Ubuntu 18.04 LTS (bionic) | → 2023-04                   | 3.6, 3.7 | 10         |
-+---------------------------+-----------------------------+----------+------------+
-| Ubuntu 20.04 LTS (focal)  | → 2025-04                   | 3.8      | 12         |
-+---------------------------+-----------------------------+----------+------------+
-| Ubuntu 20.10 (groovy)     | → 2021-07                   | 3.8, 3.9 | 12         |
-+---------------------------+-----------------------------+----------+------------+
-| Ubuntu 21.04 (hirsute)    | → 2022-01                   | 3.9      | 13         |
-+---------------------------+-----------------------------+----------+------------+
-
-.. NOTE::
-
-    Please note that the "end of support" date is the end of the Linux
-    distribution support, not the date until when Pontoon will be maintained on
-    this system: if Pontoon's developers stop supporting Python or PostgreSQL
-    versions available on those platforms, the support will be dropped for newer
-    releases.
+.. include:: ./_distro-table.rst
 
 
 Warranty
