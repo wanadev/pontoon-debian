@@ -3,7 +3,7 @@ Requirements
 
 To install Pontoon, you will need:
 
-* Debian or Ubuntu with systemd,
+* Debian or Ubuntu with systemd and an administrator (``root``) access,
 * Python with venv module,
 * A C / C++ compiler (required to install some of the Python dependencies),
 * PostgreSQL
