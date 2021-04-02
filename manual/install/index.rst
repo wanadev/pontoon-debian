@@ -1,7 +1,8 @@
 Installing Pontoon on Debian and Ubuntu
 =======================================
 
-TODO
+In this section we will see how to install a fresh Pontoon install on Debian
+and Ubuntu.
 
 .. toctree::
    :maxdepth: 2
