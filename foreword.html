@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Foreword &mdash; Pontoon Maintainer Manual for Debian  documentation</title>
+  <title>Foreword &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting or Building Pontoon" href="release-tarball.html" />
-    <link rel="prev" title="Welcome to Pontoon Maintainer Manual for Debian!" href="index.html" /> 
+    <link rel="prev" title="Welcome to Pontoon Debian Administrator’s Manual!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -53,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Pontoon Maintainer Manual for Debian
+            <a href="index.html" class="icon icon-home"> Pontoon Debian Administrator's Manual
           
 
           
@@ -113,7 +113,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Pontoon Maintainer Manual for Debian</a>
+          <a href="index.html">Pontoon Debian Administrator's Manual</a>
         
       </nav>
 
@@ -169,27 +169,65 @@
 <h1>Foreword<a class="headerlink" href="#foreword" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-pontoon">
 <h2>What is Pontoon?<a class="headerlink" href="#what-is-pontoon" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<p>From Pontoon’s repository:</p>
+<blockquote>
+<div><p><strong>Pontoon</strong> is a <strong>translation management system</strong> used and developed by
+the Mozilla localization community. It specializes in open source
+localization that is driven by the community and uses version-control
+systems for storing translations.</p>
+</div></blockquote>
+<p>Official Pontoon repository on Github:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/mozilla/pontoon">https://github.com/mozilla/pontoon</a></p></li>
+</ul>
+<p>Official Pontoon documentation:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mozilla-pontoon.readthedocs.io/en/latest/">https://mozilla-pontoon.readthedocs.io/en/latest/</a></p></li>
+</ul>
+<p>Pontoon instance used to translate Firefox and other Mozilla’s projects:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pontoon.mozilla.org/">https://pontoon.mozilla.org/</a></p></li>
+</ul>
 </div>
 <div class="section" id="what-is-pontoon-debian">
 <h2>What is Pontoon Debian?<a class="headerlink" href="#what-is-pontoon-debian" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<p><strong>Pontoon Debian</strong> is a project providing :</p>
+<ul class="simple">
+<li><p><strong>A Pontoon distribution</strong> to help install it on Debian and Ubuntu systems.
+It consists of:</p>
+<ul>
+<li><p><strong>Releases</strong>: Pontoon is a project in constant evolution that is deployed
+using continuous integration on Mozilla’s Heroku servers. This makes it
+difficult to maintain on a self-hosted server, so we chose to make releases
+with a defined set of new features / fixes in them, and to document the
+migration between two versions of our releases.</p></li>
+<li><p><strong>Prebuit tarballs</strong>: Pontoon versions that we build and release on
+a regular basis.</p></li>
+<li><p><strong>Build scripts</strong>: The scripts to build your own Pontoon versions.</p></li>
+<li><p><strong>Sample configuration files</strong> for Pontoon, systemd, Nginx,…</p></li>
+</ul>
+</li>
+<li><p><strong>A manual</strong> (the one you are reading) to help administrators to install and
+maintain Pontoon on Debian and Ubuntu.</p></li>
+</ul>
+<p>Each Pontoon version we release are automatically tested on a matrix of
+different distributions, Python and PostgreSQL versions (see below).</p>
 </div>
 <div class="section" id="targeted-systems">
 <h2>Targeted Systems<a class="headerlink" href="#targeted-systems" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<p>Pontoon Debian currently targets the following systems:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 34%" />
+<col style="width: 35%" />
 <col style="width: 37%" />
 <col style="width: 13%" />
-<col style="width: 16%" />
+<col style="width: 15%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Distribution</p></th>
 <th class="head"><p>Distribution End of Support</p></th>
 <th class="head"><p>Python</p></th>
-<th class="head"><p>PostgresSQL</p></th>
+<th class="head"><p>PostgreSQL</p></th>
 </tr>
 </thead>
 <tbody>
@@ -225,10 +263,23 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that the “end of support” date is the end of the Linux
+distribution support, not the date until when Pontoon will be maintained on
+this system: if Pontoon’s developers stop supporting Python or PostgreSQL
+versions available on those platforms, the support will be dropped for newer
+releases.</p>
+</div>
 </div>
 <div class="section" id="warranty">
 <h2>Warranty<a class="headerlink" href="#warranty" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<p>We made this project for our own needs and we shared it in the hope that it
+will be useful. <strong>It is provided “as is”, without any warranty</strong>. We are not
+liable to you for any damage or data loss you encounter by following the
+instructions of this manual or by using our scripts and releases.</p>
+<p>Also please note that we may stop working on this project at any time, and that
+we may not answer support requests.</p>
 </div>
 </div>
 
@@ -239,7 +290,7 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="release-tarball.html" class="btn btn-neutral float-right" title="Getting or Building Pontoon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Pontoon Maintainer Manual for Debian!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Pontoon Debian Administrator’s Manual!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

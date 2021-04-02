@@ -1,5 +1,7 @@
-Welcome to Pontoon Maintainer Manual for Debian!
-================================================
+Welcome to Pontoon Debian Administrator's Manual!
+=================================================
+
+This manual documents the installation and the maintenance of Pontoon on Debian and Ubuntu.
 
 .. toctree::
    :maxdepth: 2
