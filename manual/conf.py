@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Pontoon Maintainer Manual for Debian'
+project = 'Pontoon Debian Administrator\'s Manual'
 copyright = '2021, Wanadev'
 author = 'Wanadev'
 
