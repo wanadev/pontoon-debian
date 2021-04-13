@@ -14,9 +14,7 @@ then edit the cron configuration using the following command::
 You just have to call the `debian/sync-projects.sh
 <https://github.com/wanadev/pontoon-debian/blob/master/debian/sync-projects.sh>`_
 script at the desired interval. For example, you can add the following line to
-run the synchronization every hour:
-
-.. code-block:: cron
+run the synchronization every hour::
 
     0 * * * * /opt/pontoon/current/debian/sync-projects.sh
 
