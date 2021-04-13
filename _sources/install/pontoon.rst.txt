@@ -237,6 +237,8 @@ Just answer by typing ``yes<Enter>``::
    If now the server is asking you for a password, that means the public key is
    not well configured on the user.
 
+You can now leave from the ``pontoon`` using the ``exit`` command.
+
 
 Other Configurations
 ~~~~~~~~~~~~~~~~~~~~

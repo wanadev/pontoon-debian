@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Automatic Syncronization (cron) &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
+  <title>Automatic Synchronization (cron) &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
   
 
   
@@ -92,7 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="requirements.html">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="postgresql.html">PostgreSQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon.html">Pontoon</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Automatic Syncronization (cron)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Automatic Synchronization (cron)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systemd.html">Startup Configuration (systemd)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nginx.html">Nginx</a></li>
 </ul>
@@ -150,7 +150,7 @@
         
           <li><a href="index.html">Installing Pontoon on Debian and Ubuntu</a> &raquo;</li>
         
-      <li>Automatic Syncronization (cron)</li>
+      <li>Automatic Synchronization (cron)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,9 +169,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="automatic-syncronization-cron">
-<h1>Automatic Syncronization (cron)<a class="headerlink" href="#automatic-syncronization-cron" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+  <div class="section" id="automatic-synchronization-cron">
+<h1>Automatic Synchronization (cron)<a class="headerlink" href="#automatic-synchronization-cron" title="Permalink to this headline">¶</a></h1>
+<p>To enable automatic synchronization, we will use cron.</p>
+<p>Ton configure this, first, login as <code class="docutils literal notranslate"><span class="pre">pontoon</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">pontoon</span>
+</pre></div>
+</div>
+<p>then edit the cron configuration using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">crontab</span> <span class="o">-</span><span class="n">e</span>
+</pre></div>
+</div>
+<p>You just have to call the <a class="reference external" href="https://github.com/wanadev/pontoon-debian/blob/master/debian/sync-projects.sh">debian/sync-projects.sh</a>
+script at the desired interval. For example, you can add the following line to
+run the synchronization every hour:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pontoon</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">sync</span><span class="o">-</span><span class="n">projects</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>For more information, read <a class="reference external" href="https://www.man7.org/linux/man-pages/man5/crontab.5.html">the crontab documentation</a>.</p>
+<p>Once done, you can leave from the <code class="docutils literal notranslate"><span class="pre">pontoon</span></code> shell using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you installed Pontoon in at a custom location or if your <em>virtualenv</em> is
+not named <code class="docutils literal notranslate"><span class="pre">__env__</span></code>, you will have to modify the <a class="reference external" href="https://github.com/wanadev/pontoon-debian/blob/master/debian/sync-projects.sh">debian/sync-project.sh</a>
+script.</p>
+</div>
 </div>
 
 
