@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Backuping and Restoring Pontoon &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Updating Pontoon" href="migration/index.html" />
+    <link rel="prev" title="Nginx" href="install/nginx.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Pontoon Debian Administrator's Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="foreword.html">Foreword</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-tarball.html">Getting Pontoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install/index.html">Installing Pontoon on Debian and Ubuntu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Backuping and Restoring Pontoon</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-to-backup">What to Backup?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#backuping-pontoon">Backuping Pontoon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#backuping-files">Backuping Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backuping-the-database">Backuping the Database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#restoring-a-pontoon">Restoring a Pontoon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#restoring-files">Restoring Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restoring-the-database">Restoring the Database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#clearing-the-database">Clearing the Database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restoring-the-dump">Restoring the Dump</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="migration/index.html">Updating Pontoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pontoon Debian Administrator's Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Backuping and Restoring Pontoon</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/backup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="backuping-and-restoring-pontoon">
+<h1>Backuping and Restoring Pontoon<a class="headerlink" href="#backuping-and-restoring-pontoon" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-to-backup">
+<h2>What to Backup?<a class="headerlink" href="#what-to-backup" title="Permalink to this headline">¶</a></h2>
+<p>You have to backup the following elements:</p>
+<ul class="simple">
+<li><p>The database (you can make an SQL dump of your db),</p></li>
+<li><p>The Pontoon’s configuration: <code class="docutils literal notranslate"><span class="pre">/etc/opt/pontoon.env</span></code>,</p></li>
+<li><p>The Pontoon’s SSH keys folder: <code class="docutils literal notranslate"><span class="pre">/var/opt/pontoon/.ssh/</span></code></p></li>
+</ul>
+<p>You may be tempted to backup the media folder (<code class="docutils literal notranslate"><span class="pre">/var/opt/pontoon/media</span></code>) but
+it only contains cloned Git repositories, so they can be cloned again…</p>
+</div>
+<div class="section" id="backuping-pontoon">
+<h2>Backuping Pontoon<a class="headerlink" href="#backuping-pontoon" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="backuping-files">
+<h3>Backuping Files<a class="headerlink" href="#backuping-files" title="Permalink to this headline">¶</a></h3>
+<p>Just copy the <code class="docutils literal notranslate"><span class="pre">/etc/opt/pontoon.env</span></code> file and the <code class="docutils literal notranslate"><span class="pre">/var/opt/pontoon/.ssh/</span></code>
+folder.</p>
+</div>
+<div class="section" id="backuping-the-database">
+<h3>Backuping the Database<a class="headerlink" href="#backuping-the-database" title="Permalink to this headline">¶</a></h3>
+<p>To backup the database, fist login as the <code class="docutils literal notranslate"><span class="pre">postgres</span></code> user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>Then dump the database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pg_dump</span> <span class="n">pontoondb</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pontoondb</span><span class="o">.</span><span class="n">dump</span><span class="o">.</span><span class="n">sql</span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pontoondb</span></code> is the name of the database,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/tmp/pontoondb.dump.sql</span></code> is a file where the dump will be written.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="restoring-a-pontoon">
+<h2>Restoring a Pontoon<a class="headerlink" href="#restoring-a-pontoon" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Be sure have the exact same version of Pontoon installed than the one you
+backuped. Follow the installation guide if you need to make a fresh
+install:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="install/index.html"><span class="doc">Installing Pontoon on Debian and Ubuntu</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="restoring-files">
+<h3>Restoring Files<a class="headerlink" href="#restoring-files" title="Permalink to this headline">¶</a></h3>
+<p>Just copy back the <code class="docutils literal notranslate"><span class="pre">/etc/opt/pontoon.env</span></code> file and the
+<code class="docutils literal notranslate"><span class="pre">/var/opt/pontoon/.ssh/</span></code> folder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">/var/opt/pontoon/.ssh/</span></code> folder must be owned by the <code class="docutils literal notranslate"><span class="pre">pontoon</span></code> user and have <code class="docutils literal notranslate"><span class="pre">0700</span></code> as permissions. You can fix both with the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">pontoon</span><span class="p">:</span><span class="n">pontoon</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pontoon</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span>
+<span class="n">chmod</span> <span class="mi">700</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pontoon</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="restoring-the-database">
+<h3>Restoring the Database<a class="headerlink" href="#restoring-the-database" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="clearing-the-database">
+<h4>Clearing the Database<a class="headerlink" href="#clearing-the-database" title="Permalink to this headline">¶</a></h4>
+<p>The database must be empty before restoring. The simplest way to achieve this is to drop the entire database and to recreate it.</p>
+<p>To drop the database, first login to the <code class="docutils literal notranslate"><span class="pre">postgres</span></code> account:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>then open the PostgreSQL shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span>
+</pre></div>
+</div>
+<p>and execute the following query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROP</span> <span class="n">DATABASE</span> <span class="n">pontoondb</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pontoondb</span></code> is the name of the database,</p></li>
+</ul>
+<p>Then create the database again following the <a class="reference internal" href="install/postgresql.html"><span class="doc">PostgreSQL</span></a> installation page of the manual.</p>
+</div>
+<div class="section" id="restoring-the-dump">
+<h4>Restoring the Dump<a class="headerlink" href="#restoring-the-dump" title="Permalink to this headline">¶</a></h4>
+<p>First login to the <code class="docutils literal notranslate"><span class="pre">postgres</span></code> account:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>Then restore the dump with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="n">pontoondb</span> <span class="o">&lt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pontoondb</span><span class="o">.</span><span class="n">dump</span><span class="o">.</span><span class="n">sql</span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pontoondb</span></code> is the name of the database,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/tmp/pontoondb.dump.sql</span></code> is the path of the SQL dump to restore.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="migration/index.html" class="btn btn-neutral float-right" title="Updating Pontoon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install/nginx.html" class="btn btn-neutral float-left" title="Nginx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Wanadev.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

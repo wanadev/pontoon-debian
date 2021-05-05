@@ -36,7 +36,7 @@ Now you should edit that file to configure at least the server name and the path
     server {
         listen 80;
         listen 443 ssl http2;
-        server_name pontoon.example.org;
+        server_name pontoon.example.com;
 
         ssl_certificate /etc/ssl/certs/ssl-cert-snakeoil.pem;
         ssl_certificate_key /etc/ssl/private/ssl-cert-snakeoil.key;
