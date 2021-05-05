@@ -42,7 +42,6 @@ pip install -r requirements.txt
 
 # Install Node dependencies
 cd frontend/
-npm install
 npm install --legacy-peer-deps
 cd -
 npm install
@@ -86,6 +85,11 @@ cp -v contribute.json $OUTPUT_DIR
 cp -v CONTRIBUTING.rst $OUTPUT_DIR
 cp -v CODE_OF_CONDUCT.md $OUTPUT_DIR
 cp -vr $DEBIAN_DIR $OUTPUT_DIR
+
+echo "[pontoon-debian]" >> $OUTPUT_DIR/RELEASE.txt
+echo "version = $VERSION" >> $OUTPUT_DIR/RELEASE.txt
+echo "pontoon-rev = $(git rev-parse HEAD)" >> $OUTPUT_DIR/RELEASE.txt
+echo "release-date = $(date --rfc-email)" >> $OUTPUT_DIR/RELEASE.txt
 
 # Make the tarball
 cd $(dirname $OUTPUT_DIR)
