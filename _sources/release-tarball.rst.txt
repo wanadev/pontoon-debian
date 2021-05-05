@@ -19,5 +19,29 @@ find them on our Github release page:
 Building Pontoon Debian Tarball
 -------------------------------
 
-TODO: the scripts are still work in progress, we will update the documentation
-once everything is ready.
+First install some dependencies::
+
+    sudo apt install git python3 python3-dev python3-venv nodejs npm
+
+Then clone the Git repository and navigate to it::
+
+    clone https://github.com/wanadev/pontoon-debian.git
+    cd pontoon-debian
+
+Finaly build the tarball with the following command::
+
+    ./make-pontoon-tarball.sh [PONTOON_REV [VERSION]]
+
+Where
+
+* ``PONTOON_REV`` is any valid revision or reference in the Pontoon's
+  repository (e.g. ``master``, ``87697b7b``,...)
+
+* ``VERSION`` is a version number for your release tarball (e.g. ``0.0.0.0``,
+  ``2021.05.05.0``,...)
+
+Example::
+
+    ./make-pontoon-tarball.sh master 0.0.0.0
+
+The output goes to ``dist/pontoon_<VERSION>.tar.gz``.
