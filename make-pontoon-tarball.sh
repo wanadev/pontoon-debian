@@ -1,10 +1,16 @@
 #!/bin/bash
 
 # Dependencies: build-essential git python3 python3-dev python3-venv nodejs npm
+# Usage: ./make-pontoon-tarball.sh [PONTOON_REV] [VERSION]
+#  PONTOON_REV: Pontoon's revision (git) to release (default: master)
+#  VERSION: The version of the Pontoon Debian release (default: date +%Y.%m.%d.0)
+
+PONTOON_REV=$1
+test -z "$PONTOON_REV" && PONTOON_REV=master
+VERSION=$2
+test -z "$VERSION" && VERSION=$(date +%Y.%m.%d.0)
 
 APP_NAME=pontoon
-VERSION=$1
-test -z "$VERSION" && VERSION=$(date +%Y.%m.%d.0)
 BUILD_DIR=$PWD/build
 OUTPUT_DIR=$PWD/build/$APP_NAME-$VERSION
 OUTPUT_TARBALL=$PWD/dist/${APP_NAME}_$VERSION.tar.gz
@@ -26,6 +32,7 @@ mkdir -p $(dirname $OUTPUT_TARBALL)
 # Clone Pontoon
 git clone https://github.com/mozilla/pontoon.git $BUILD_DIR/$APP_NAME.git
 cd $BUILD_DIR/$APP_NAME.git
+git checkout $PONTOON_REV
 
 # Install Python dependencies
 python3 -m venv __env__
