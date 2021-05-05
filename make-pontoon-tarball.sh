@@ -36,6 +36,7 @@ pip install -r requirements.txt
 # Install Node dependencies
 cd frontend/
 npm install
+npm install --legacy-peer-deps
 cd -
 npm install
 
