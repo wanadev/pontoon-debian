@@ -33,7 +33,7 @@ jobs:
           ./make-pontoon-tarball.sh
 
       - name: "Upload artifacts"
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: pontoon-release-tarball
           path: ./dist/
