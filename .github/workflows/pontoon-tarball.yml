@@ -1,6 +1,10 @@
 name: "Build and Test Pontoon for Debian"
 
-on: [push]
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
 
@@ -33,6 +37,7 @@ jobs:
         with:
           name: pontoon-release-tarball
           path: ./dist/
+          retention-days: 14
 
   test:
 
