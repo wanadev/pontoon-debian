@@ -2,7 +2,13 @@ name: "Build and Test Pontoon for Debian"
 
 on:
   push:
+    paths:
+      - "make-pontoon-tarball.sh"
+      - "debian/*"
   pull_request:
+    paths:
+      - "make-pontoon-tarball.sh"
+      - "debian/**"
   schedule:
     - cron: "0 0 * * *"
 
