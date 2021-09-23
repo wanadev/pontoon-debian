@@ -167,7 +167,11 @@
 <h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="where-can-i-find-the-pontoon-s-logs">
 <h2>Where can I find the Pontoon’s logs?<a class="headerlink" href="#where-can-i-find-the-pontoon-s-logs" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<p>You can find the Pontoon’s logs in the system logs. By defaut they are in the <code class="docutils literal notranslate"><span class="pre">/var/log/syslog</span></code> file.</p>
+<p>Pontoon logs are logged as <code class="docutils literal notranslate"><span class="pre">gunicorn</span></code> in the logs so you can display them in real time with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">syslog</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">gunicorn</span>
+</pre></div>
+</div>
 </div>
 </div>
 
