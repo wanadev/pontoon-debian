@@ -173,11 +173,27 @@
 </ul>
 <div class="section" id="prebuilt-pontoon-debian-tarball">
 <h2>Prebuilt Pontoon Debian Tarball<a class="headerlink" href="#prebuilt-pontoon-debian-tarball" title="Permalink to this headline">¶</a></h2>
-<p>The simplest way to get Pontoon is to download the prebuilt tarballs. You will
-find them on our Github release page:</p>
+<p>The simplest way to get Pontoon is to download the prebuilt tarballs.</p>
+<p>We have two types of prebuilt tarball releases:</p>
+<ul class="simple">
+<li><p>“stable” releases,</p></li>
+<li><p>and nightly builds.</p></li>
+</ul>
+<p>The “stable” releases are built from Pontoon’s <code class="docutils literal notranslate"><span class="pre">master</span></code> and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the “stable” releases, go to our release page on Github:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases">https://github.com/wanadev/pontoon-debian/releases</a></p></li>
 </ul>
+<p>The nightly builds are automatically generated every night and are not tested nor documented. They should be used only for testing purpose. You will find nightly builds as artifacts of the Github Actions pipelines :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/wanadev/pontoon-debian/actions/workflows/pontoon-tarball.yml">https://github.com/wanadev/pontoon-debian/actions/workflows/pontoon-tarball.yml</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can only download nightly builds from the last 14 days.</p></li>
+<li><p>You must be connected to your Github account to download artifacts.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="building-pontoon-debian-tarball">
 <h2>Building Pontoon Debian Tarball<a class="headerlink" href="#building-pontoon-debian-tarball" title="Permalink to this headline">¶</a></h2>

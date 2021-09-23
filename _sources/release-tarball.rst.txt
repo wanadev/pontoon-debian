@@ -10,10 +10,25 @@ We provide both:
 Prebuilt Pontoon Debian Tarball
 -------------------------------
 
-The simplest way to get Pontoon is to download the prebuilt tarballs. You will
-find them on our Github release page:
+The simplest way to get Pontoon is to download the prebuilt tarballs.
+
+We have two types of prebuilt tarball releases:
+
+* "stable" releases,
+* and nightly builds.
+
+The "stable" releases are built from Pontoon's ``master`` and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the "stable" releases, go to our release page on Github:
 
 * https://github.com/wanadev/pontoon-debian/releases
+
+The nightly builds are automatically generated every night and are not tested nor documented. They should be used only for testing purpose. You will find nightly builds as artifacts of the Github Actions pipelines :
+
+* https://github.com/wanadev/pontoon-debian/actions/workflows/pontoon-tarball.yml
+
+.. NOTE::
+
+   * You can only download nightly builds from the last 14 days.
+   * You must be connected to your Github account to download artifacts.
 
 
 Building Pontoon Debian Tarball
