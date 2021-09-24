@@ -3,7 +3,7 @@ Automatic Synchronization (cron)
 
 To enable automatic synchronization, we will use cron.
 
-Ton configure this, first, login as ``pontoon``::
+To configure this, first, login as ``pontoon``::
 
     su pontoon
 

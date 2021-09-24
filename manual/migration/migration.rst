@@ -1,17 +1,22 @@
 Migration Guide
 ===============
 
-This page contains generic migration instructions. Please read the version-specific page to check if there are special instructions to migrate to this version.
+This page contains generic migration instructions. Please read the
+version-specific page to check if there are special instructions to migrate to
+this version.
 
 .. WARNING::
 
-   When upgrading Pontoon Debian from a version to another one, prefer migration from a version to the next one without skipping any intermediate version. While it could work, this is an untested migration path.
+   When upgrading Pontoon Debian from a version to another one, prefer
+   migrating from a version to the next one without skipping any intermediate
+   version. While it could work, this is an untested migration path.
 
 
 1. Stop Pontoon Service
 -----------------------
 
-The first thing to do before starting the migration is to stop the Pontoon service::
+The first thing to do before starting the migration is to stop the Pontoon
+service::
 
     systemctl stop pontoon
 
@@ -19,7 +24,8 @@ The first thing to do before starting the migration is to stop the Pontoon servi
 2. Backup the Database
 ----------------------
 
-Once Pontoon stopped, backup the database to be able to rollback if anything wrong happens. Follow instruction from the backup guide:
+Once Pontoon stopped, backup the database to be able to rollback if anything
+wrong happens. Follow instruction from the backup guide:
 
 * :doc:`../backup`
 
@@ -34,7 +40,8 @@ First download the Pontoon release you want to migrate to::
 
 See :doc:`../release-tarball` for more information.
 
-Once the download finished, extract the Pontoon release and update the symbolic link::
+Once the download finished, extract the Pontoon release and update the symbolic
+link::
 
     tar -xvzf pontoon_XXXX.XX.XX.X.tar.gz
     rm current
@@ -64,7 +71,8 @@ And install the dependencies::
 4. Migrate the Database
 -----------------------
 
-Once the new Pontoon release installed, the database must be migrated using the following commands::
+Once the new Pontoon release installed, the database must be migrated using the
+following commands::
 
     export DOTENV_PATH=/etc/opt/pontoon.env
     python manage.py migrate
@@ -81,7 +89,8 @@ If everything is ok, you can now restart your Pontoon service::
 Rollback
 --------
 
-If something goes wrong during the migration, you can rollback to the previously installed Pontoon version.
+If something goes wrong during the migration, you can rollback to the
+previously installed Pontoon version.
 
 Stop the Pontoon service::
 
@@ -93,7 +102,8 @@ Update the ``current/`` symbolic link::
     rm current
     ln -s pontoon-XXXX.XX.XX.X/ current   # where XXX.XX.XX.X is the previous version
 
-Restore the backup of your database following the instruction from the backup guide:
+Restore the backup of your database following the instruction from the backup
+guide:
 
 * :doc:`../backup`
 

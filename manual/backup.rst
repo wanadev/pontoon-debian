@@ -41,13 +41,13 @@ Where:
 * ``/tmp/pontoondb.dump.sql`` is a file where the dump will be written.
 
 
-Restoring a Pontoon
--------------------
+Restoring Pontoon
+-----------------
 
 .. IMPORTANT::
 
-    Be sure have the exact same version of Pontoon installed than the one you
-    backuped. Follow the installation guide if you need to make a fresh
+    Be sure to have the exact same version of Pontoon installed than the one
+    you backuped. Follow the installation guide if you need to make a fresh
     install:
 
     * :doc:`./install/index`
