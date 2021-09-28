@@ -40,11 +40,19 @@ source __env__/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 
+# Get yarn
+mkdir yarn_install
+cd yarn_install
+echo "{}" > package.json
+npm install --no-save yarn
+YARN=$PWD/node_modules/.bin/yarn
+cd ..
+
 # Install Node dependencies
 cd frontend/
-npm install --legacy-peer-deps
+$YARN install
 cd -
-npm install
+$YARN install
 
 # Set some basic config to build Pontoon front
 export SECRET_KEY=pontoonsecret
