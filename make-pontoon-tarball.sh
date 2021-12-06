@@ -67,7 +67,7 @@ npm run build
 python3 manage.py collectstatic
 
 # Generates Python 3.7 requirements file
-pip install pip-tools
+pip install -r requirements/dev.txt
 cp $PY37_REQUIREMENTS_IN .
 pip-compile --generate-hashes requirements.py37.in
 
