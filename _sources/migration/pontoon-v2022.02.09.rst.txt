@@ -6,7 +6,7 @@ Release Details
 
 * Migration from: :doc:`./pontoon-v2021.12.06`
 * Built from commit: `ce970a7b6e8cbc38416fc9381dc106ed2687eefa <https://github.com/mozilla/pontoon/commit/ce970a7b6e8cbc38416fc9381dc106ed2687eefa>`_
-* Tarball URL: https://github.com/wanadev/pontoon-debian/releases/download/v2022.01.09.0/pontoon_2022.01.09.0.tar.gz
+* Tarball URL: https://github.com/wanadev/pontoon-debian/releases/download/v2022.02.09.0/pontoon_2022.02.09.0.tar.gz
 
 
 Migration Instructions
