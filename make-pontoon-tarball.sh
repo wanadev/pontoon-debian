@@ -40,19 +40,8 @@ source __env__/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# Get yarn
-mkdir yarn_install
-cd yarn_install
-echo "{}" > package.json
-npm install --no-save yarn
-YARN=$PWD/node_modules/.bin/yarn
-cd ..
-
 # Install Node dependencies
-cd frontend/
-$YARN install
-cd -
-$YARN install
+npm install
 
 # Set some basic config to build Pontoon front
 export SECRET_KEY=pontoonsecret
@@ -60,10 +49,7 @@ export DATABASE_URL=sqlite://:memory:
 export DJANGO_DEBUG=True
 
 # Build the front
-cd frontend/
-npm run build
-cd -
-npm run build
+npm run build:prod
 python3 manage.py collectstatic
 
 # Generates Python 3.7 requirements file
@@ -77,16 +63,14 @@ deactivate
 # Copy files
 cp -vr static/ $OUTPUT_DIR
 cp -vr pontoon/ $OUTPUT_DIR
-cp -vr assets/ $OUTPUT_DIR
+cp -vr tag-admin/ $OUTPUT_DIR
+cp -vr translate/ $OUTPUT_DIR
 cp -vr requirements/ $OUTPUT_DIR
-mkdir -vp $OUTPUT_DIR/frontend/
-cp -vr ./frontend/build/ $OUTPUT_DIR/frontend/
 cp -v setup.py $OUTPUT_DIR
 cp -v setup.cfg $OUTPUT_DIR
 cp -v manage.py $OUTPUT_DIR
 cp -v requirements.txt $OUTPUT_DIR
 cp -v requirements.py37.txt $OUTPUT_DIR
-cp -v webpack-stats.json $OUTPUT_DIR
 cp -v LICENSE $OUTPUT_DIR
 cp -v README.md $OUTPUT_DIR
 cp -v contribute.json $OUTPUT_DIR
