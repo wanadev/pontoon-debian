@@ -5,10 +5,12 @@ on:
     paths:
       - "make-pontoon-tarball.sh"
       - "debian/*"
+      - ".github/workflows/pontoon-tarball.yml"
   pull_request:
     paths:
       - "make-pontoon-tarball.sh"
       - "debian/**"
+      - ".github/workflows/pontoon-tarball.yml"
   schedule:
     - cron: "0 0 * * *"
 
@@ -27,12 +29,12 @@ jobs:
       - name: "Set up Python 3.8"
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: "3.8"
 
       - name: "Set up Node 14"
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
 
       - name: "Make Pontoon release tarball"
         run: |
@@ -53,28 +55,24 @@ jobs:
         include:
           - name: "Debian 10 (buster)"  # -> 2024-06
             os: ubuntu-18.04
-            python-version: 3.7
+            python-version: "3.7"
             postgres-version: 11
-          - name: "Debian 11 (bullseye)"  # -> ?
+          - name: "Debian 11 (bullseye)"  # -> 2026-06
             os: ubuntu-20.04
-            python-version: 3.9
+            python-version: "3.9"
             postgres-version: 13
           - name: "Ubuntu 18.04 LTS (bionic)"  # -> 2023-04
             os: ubuntu-18.04
-            python-version: 3.7
-            postgres-version: 10
+            python-version: "3.7"
+            postgres-version: "10"
           - name: "Ubuntu 20.04 LTS (focal)"  # -> 2025-04
             os: ubuntu-20.04
-            python-version: 3.8
+            python-version: "3.8"
             postgres-version: 12
-          - name: "Ubuntu 20.10 (groovy)"  # -> 2021-07
+          - name: "Ubuntu 22.04 (jammy)"  # -> 2027-04
             os: ubuntu-latest
-            python-version: 3.8
-            postgres-version: 12
-          - name: "Ubuntu 21.04 (hirsute)"  # -> 2022-01
-            os: ubuntu-latest
-            python-version: 3.9
-            postgres-version: 13
+            python-version: "3.10"
+            postgres-version: 14
 
     name: "${{ matrix.name }} [py${{ matrix.python-version }}, pg${{ matrix.postgres-version }}]"
     needs: build
@@ -114,13 +112,13 @@ jobs:
           echo "DJANGO_DEBUG=True" >> .env
 
       - name: "Install Python dependencies (Python == 3.7)"
-        if: ${{ matrix.python-version == 3.7 }}
+        if: ${{ matrix.python-version == "3.7" }}
         run: |
           cd pontoon-*
           pip install -r requirements.py37.txt
 
       - name: "Install Python dependencies (Python != 3.7)"
-        if: ${{ matrix.python-version != 3.7 }}
+        if: ${{ matrix.python-version != "3.7" }}
         run: |
           cd pontoon-*
           pip install -r requirements.txt
