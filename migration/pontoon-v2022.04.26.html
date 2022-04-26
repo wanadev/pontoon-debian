@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Pontoon Debian v2022.02.09 &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
+  <title>Pontoon Debian v2022.04.26 &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pontoon Debian v2021.12.06" href="pontoon-v2021.12.06.html" />
-    <link rel="prev" title="Pontoon Debian v2022.04.26" href="pontoon-v2022.04.26.html" /> 
+    <link rel="next" title="Pontoon Debian v2022.02.09" href="pontoon-v2022.02.09.html" />
+    <link rel="prev" title="Migration Guide" href="migration.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,13 +92,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../backup.html">Backuping and Restoring Pontoon</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Updating Pontoon</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="migration.html">Migration Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.04.26.html">Pontoon Debian v2022.04.26</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Pontoon Debian v2022.02.09</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pontoon Debian v2022.04.26</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#release-details">Release Details</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#migration-instructions">Migration Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#changelog">Changelog</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.02.09.html">Pontoon Debian v2022.02.09</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.12.06.html">Pontoon Debian v2021.12.06</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.09.23.html">Pontoon Debian v2021.09.23</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.03.23.html">Pontoon Debian v2021.03.23</a></li>
@@ -156,13 +156,13 @@
         
           <li><a href="index.html">Updating Pontoon</a> &raquo;</li>
         
-      <li>Pontoon Debian v2022.02.09</li>
+      <li>Pontoon Debian v2022.04.26</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/migration/pontoon-v2022.02.09.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/migration/pontoon-v2022.04.26.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -175,14 +175,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pontoon-debian-v2022-02-09">
-<h1>Pontoon Debian v2022.02.09<a class="headerlink" href="#pontoon-debian-v2022-02-09" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pontoon-debian-v2022-04-26">
+<h1>Pontoon Debian v2022.04.26<a class="headerlink" href="#pontoon-debian-v2022-04-26" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="release-details">
 <h2>Release Details<a class="headerlink" href="#release-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Migration from: <a class="reference internal" href="pontoon-v2021.12.06.html"><span class="doc">Pontoon Debian v2021.12.06</span></a></p></li>
-<li><p>Built from commit: <a class="reference external" href="https://github.com/mozilla/pontoon/commit/ce970a7b6e8cbc38416fc9381dc106ed2687eefa">ce970a7b6e8cbc38416fc9381dc106ed2687eefa</a></p></li>
-<li><p>Tarball URL: <a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases/download/v2022.02.09.0/pontoon_2022.02.09.0.tar.gz">https://github.com/wanadev/pontoon-debian/releases/download/v2022.02.09.0/pontoon_2022.02.09.0.tar.gz</a></p></li>
+<li><p>Migration from: <a class="reference internal" href="pontoon-v2022.02.09.html"><span class="doc">Pontoon Debian v2022.02.09</span></a></p></li>
+<li><p>Built from commit: <a class="reference external" href="https://github.com/mozilla/pontoon/commit/c86e0ed7ddf9bae4d4343acec2ce16e8688851ab">c86e0ed7ddf9bae4d4343acec2ce16e8688851ab</a></p></li>
+<li><p>Tarball URL: <a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases/download/v2022.04.26.0/pontoon_2022.04.26.0.tar.gz">https://github.com/wanadev/pontoon-debian/releases/download/v2022.04.26.0/pontoon_2022.04.26.0.tar.gz</a></p></li>
 </ul>
 </div>
 <div class="section" id="migration-instructions">
@@ -192,13 +192,26 @@
 <div class="section" id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>[security] Temporarily remove ability to change contributor email address (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2399">#2399</a>)</p></li>
-<li><p>[enhancement] Display pinned comments only in pinned comment section (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2266">#2266</a>)</p></li>
-<li><p>[enhancement] Add infinite scroll to the Machinery tab (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2394">#2394</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2391">#2391</a>)</p></li>
-<li><p>[enhancement] Add ability to Re-apply existing filter (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2257">#2257</a>)</p></li>
-<li><p>[bugfix] Minor UI fixes (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2319">#2319</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2409">#2409</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2408">#2408</a>)</p></li>
-<li><p>Various TypeScript fixes and improvements (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2385">#2385</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2396">#2396</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2398">#2398</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2415">#2415</a>)</p></li>
-<li><p>Update dependencies (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2390">#2390</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2392">#2392</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2405">#2405</a>)</p></li>
+<li><p>[security] Restore CSP and CSRF protection on /graphql (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2422">#2422</a>)</p></li>
+<li><p>[security] Validate Repository URLs before they are stored into the DB (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2446">#2446</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2455">#2455</a>)</p></li>
+<li><p>[enhancement] Add support for key-value JSON (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2322">#2322</a>)</p></li>
+<li><p>[enhancement] Add notifications for approved &amp; rejected suggestions (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2094">#2094</a>)</p></li>
+<li><p>[enhancement] Make distinction between Pretranslated and Fuzzy strings (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2237">#2237</a>)</p></li>
+<li><p>[enhancement] Clarify visibility of data in the profile page (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2488">#2488</a>)</p></li>
+<li><p>[bugfix] Avoid resetting errors &amp; warning during editor mount (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2251">#2251</a>)</p></li>
+<li><p>[bugfix] Update MS Terminology Request / Response according to the new API version (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2447">#2447</a>)</p></li>
+<li><p>[bugfix] Fix project and locale insights data (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2457">#2457</a>)</p></li>
+<li><p>[bugfix] Prevent AttributeError on Tour for AnonymousUsers (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2467">#2467</a>)</p></li>
+<li><p>[bugfix] Fixes bug where hitting the Enter key in the numpad area now enters a newline instead of submitting the suggestion (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2475">#2475</a>)</p></li>
+<li><p>[bugfix] Fixes a Pontoon UI crash that occure when clicking 2 strings quickly one after another (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2474">#2474</a>)</p></li>
+<li><p>[bugfix] Delete translation memory entries of implicitly rejected translations (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2491">#2491</a>)</p></li>
+<li><p>[ui] Correct ‘unaproved’ to ‘unapproved’ typo (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2426">#2426</a>)</p></li>
+<li><p>[ui] Switch pretranslated/fuzzy checkbox colors (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2473">#2473</a>)</p></li>
+<li><p>[ui] Rename Deadline to Target Date (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2434">#2434</a>)</p></li>
+<li><p>[misc] Refactoring of the frontend and the way it is built; the Pontoon Debian
+build script has been updated accordingly (<a class="reference external" href="https://github.com/mozilla/pontoon/issues/2423">#2423</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2430">#2430</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2432">#2432</a>,
+<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2437">#2437</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2443">#2443</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2444">#2444</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2450">#2450</a>)</p></li>
+<li><p>Update dependencies (<a class="reference external" href="https://github.com/mozilla/pontoon/pull/2425">#2425</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2431">#2431</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2435">#2435</a>, <a class="reference external" href="https://github.com/mozilla/pontoon/pull/2472">#2472</a>)</p></li>
 </ul>
 </div>
 </div>
@@ -209,8 +222,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="pontoon-v2021.12.06.html" class="btn btn-neutral float-right" title="Pontoon Debian v2021.12.06" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="pontoon-v2022.04.26.html" class="btn btn-neutral float-left" title="Pontoon Debian v2022.04.26" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pontoon-v2022.02.09.html" class="btn btn-neutral float-right" title="Pontoon Debian v2022.02.09" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="migration.html" class="btn btn-neutral float-left" title="Migration Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
