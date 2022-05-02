@@ -6,8 +6,11 @@
 
 -r requirements.txt
 
-# Python 3.7 additional dependency for jsonpickle
+# Python 3.7 additional dependency for jsonpickle, kombu
 importlib_metadata==3.7.0
 
 # Python 3.7 additional dependency for importlib_metadata
 typing-extensions==3.6.6
+
+# Python 3.7 additional dependency for kombu
+cached_property==1.5.2
