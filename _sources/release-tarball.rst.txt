@@ -60,3 +60,11 @@ Example::
     ./make-pontoon-tarball.sh master 0.0.0.0
 
 The output goes to ``dist/pontoon_<VERSION>.tar.gz``.
+
+
+Building Pontoon Debian Tarball using Docker
+--------------------------------------------
+
+You can build the Pontoon Debian tarball from the **latest commit of Pontoon's master branch** using Docker. To do so, run::
+
+    ./make-pontoon-tarball-docker.sh

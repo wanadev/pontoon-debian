@@ -90,6 +90,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Pontoon</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prebuilt-pontoon-debian-tarball">Prebuilt Pontoon Debian Tarball</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building-pontoon-debian-tarball">Building Pontoon Debian Tarball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-pontoon-debian-tarball-using-docker">Building Pontoon Debian Tarball using Docker</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="install/index.html">Installing Pontoon on Debian and Ubuntu</a></li>
@@ -222,6 +223,13 @@ repository (e.g. <code class="docutils literal notranslate"><span class="pre">ma
 </pre></div>
 </div>
 <p>The output goes to <code class="docutils literal notranslate"><span class="pre">dist/pontoon_&lt;VERSION&gt;.tar.gz</span></code>.</p>
+</div>
+<div class="section" id="building-pontoon-debian-tarball-using-docker">
+<h2>Building Pontoon Debian Tarball using Docker<a class="headerlink" href="#building-pontoon-debian-tarball-using-docker" title="Permalink to this headline">¶</a></h2>
+<p>You can build the Pontoon Debian tarball from the <strong>latest commit of Pontoon’s master branch</strong> using Docker. To do so, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">make</span><span class="o">-</span><span class="n">pontoon</span><span class="o">-</span><span class="n">tarball</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
 </div>
 </div>
 
