@@ -37,7 +37,7 @@ git checkout $PONTOON_REV
 # Install Python dependencies
 python3 -m venv __env__
 source __env__/bin/activate
-pip install --upgrade pip
+pip install --upgrade pip==22.1.0  # Pip version fixed because it breaks pip-tools everytime...
 pip install -r requirements.txt
 
 # Install Node dependencies
