@@ -1,4 +1,4 @@
-Pontoon Debian v2022.04.26
+Pontoon Debian v2022.06.27
 ==========================
 
 Release Details
