@@ -4,7 +4,7 @@ Pontoon Debian v2022.06.27
 Release Details
 ---------------
 
-* Migration from: :doc:`./pontoon-v2022.04.26.rst`
+* Migration from: :doc:`./pontoon-v2022.04.26`
 * Built from commit: `b72158e42fde916fcd7686b4164901b7af2cd2c7 <https://github.com/mozilla/pontoon/commit/b72158e42fde916fcd7686b4164901b7af2cd2c7>`_
 * Tarball URL: https://github.com/wanadev/pontoon-debian/releases/download/v2022.06.27.0/pontoon_2022.06.27.0.tar.gz
 
