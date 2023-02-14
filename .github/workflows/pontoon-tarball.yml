@@ -26,10 +26,10 @@ jobs:
       - name: "Checkout the repository"
         uses: actions/checkout@v2
 
-      - name: "Set up Python 3.8"
+      - name: "Set up Python 3.10"
         uses: actions/setup-python@v1
         with:
-          python-version: "3.8"
+          python-version: "3.10"
 
       - name: "Set up Node 16"
         uses: actions/setup-node@v2
@@ -53,18 +53,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Debian 10 (buster)"  # -> 2024-06
-            os: ubuntu-18.04
-            python-version: "3.7"
-            postgres-version: 11
           - name: "Debian 11 (bullseye)"  # -> 2026-06
             os: ubuntu-20.04
             python-version: "3.9"
             postgres-version: 13
-          - name: "Ubuntu 18.04 LTS (bionic)"  # -> 2023-04
-            os: ubuntu-18.04
-            python-version: "3.7"
-            postgres-version: "10"
           - name: "Ubuntu 20.04 LTS (focal)"  # -> 2025-04
             os: ubuntu-20.04
             python-version: "3.8"
