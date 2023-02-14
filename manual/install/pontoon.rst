@@ -109,11 +109,9 @@ Rust ones, this is not covered by this manual)::
 
     pip install --upgrade pip
 
-Then we can install Pontoon's dependencies with **one** of those commands,
-depending on your Python's version::
+Then we can install Pontoon's dependencies with the following command::
 
-    pip install -r requirements.txt       # Python 3.8 and above
-    pip install -r requirements.py37.txt  # Python 3.7
+    pip install -r requirements.txt
 
 .. NOTE::
 
