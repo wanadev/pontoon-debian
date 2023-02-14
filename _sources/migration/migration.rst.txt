@@ -64,8 +64,7 @@ Finally, create the virtualenv::
 
 And install the dependencies::
 
-    pip install -r requirements.txt       # Python 3.8 and above
-    pip install -r requirements.py37.txt  # Python 3.7
+    pip install -r requirements.txt
 
 
 4. Migrate the Database
