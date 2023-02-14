@@ -65,7 +65,6 @@ cp -v setup.py $OUTPUT_DIR
 cp -v setup.cfg $OUTPUT_DIR
 cp -v manage.py $OUTPUT_DIR
 cp -v requirements.txt $OUTPUT_DIR
-cp -v requirements.py37.txt $OUTPUT_DIR
 cp -v LICENSE $OUTPUT_DIR
 cp -v README.md $OUTPUT_DIR
 cp -v contribute.json $OUTPUT_DIR
