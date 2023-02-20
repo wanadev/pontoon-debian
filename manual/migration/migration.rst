@@ -64,7 +64,8 @@ Finally, create the virtualenv::
 
 And install the dependencies::
 
-    pip install -r requirements.txt
+    pip install -r requirements.txt       # Python >= 3.9
+    pip install -r requirements.py38.txt  # Python 3.8
 
 
 4. Migrate the Database
