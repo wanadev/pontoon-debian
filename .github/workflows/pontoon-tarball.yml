@@ -103,7 +103,14 @@ jobs:
           echo "DATABASE_URL=postgres://pontoonuser:pontoonpassword@localhost/pontoondb" >> .env
           echo "DJANGO_DEBUG=True" >> .env
 
-      - name: "Install Python dependencies"
+      - name: "Install Python dependencies (Python == 3.8)"
+        if: ${{ matrix.python-version == 3.8 }}
+        run: |
+          cd pontoon-*
+          pip install -r requirements.py38.txt
+
+      - name: "Install Python dependencies (Python != 3.8)"
+        if: ${{ matrix.python-version != 3.8 }}
         run: |
           cd pontoon-*
           pip install -r requirements.txt

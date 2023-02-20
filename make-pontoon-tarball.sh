@@ -14,7 +14,7 @@ APP_NAME=pontoon
 BUILD_DIR=$PWD/build
 OUTPUT_DIR=$PWD/build/$APP_NAME-$VERSION
 OUTPUT_TARBALL=$PWD/dist/${APP_NAME}_$VERSION.tar.gz
-PY37_REQUIREMENTS_IN=$PWD/debian/requirements.py37.in
+PY38_REQUIREMENTS_IN=$PWD/debian/requirements.py38.in
 DEBIAN_DIR=$PWD/debian
 
 # Exit on errors
@@ -52,6 +52,11 @@ export DJANGO_DEBUG=True
 npm run build:prod
 python3 manage.py collectstatic
 
+# Generates Python 3.8 requirements file
+pip install -r requirements/dev.txt
+cp $PY38_REQUIREMENTS_IN .
+pip-compile --generate-hashes requirements.py38.in
+
 # Leave the virtualenv
 deactivate
 
@@ -65,6 +70,7 @@ cp -v setup.py $OUTPUT_DIR
 cp -v setup.cfg $OUTPUT_DIR
 cp -v manage.py $OUTPUT_DIR
 cp -v requirements.txt $OUTPUT_DIR
+cp -v requirements.py38.txt $OUTPUT_DIR
 cp -v LICENSE $OUTPUT_DIR
 cp -v README.md $OUTPUT_DIR
 cp -v contribute.json $OUTPUT_DIR
