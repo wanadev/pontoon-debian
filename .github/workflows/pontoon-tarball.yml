@@ -57,10 +57,14 @@ jobs:
             os: ubuntu-20.04
             python-version: "3.9"
             postgres-version: 13
-          - name: "Debian 12 (bookworm)"  # -> ?
-            os: ubuntu-22.04
-            python-version: "3.11"
-            postgres-version: 15
+          ###
+          ### EXPERIMENTAL: checks disabled for now because psycopg2
+          ### compilation fails.
+          ###
+          # - name: "Debian 12 (bookworm)"  # -> ?
+          #   os: ubuntu-22.04
+          #   python-version: "3.11"
+          #   postgres-version: 15
           - name: "Ubuntu 20.04 LTS (focal)"  # -> 2025-04
             os: ubuntu-20.04
             python-version: "3.8"
