@@ -28,4 +28,4 @@ Changelog
    * If you have multiple Python version on your system, be careful to use the
      right one.
 
-https://github.com/mozilla/pontoon/compare/2377d7602b7de1e86757d9d0b67cbef638608878...f1a69e8b2df2d93c128bb9084fca45a760136511
+https://github.com/mozilla/pontoon/compare/f821535e810138e0c9c6af08f231dd9c5dcc53fa...930dd23da16defcbfbf713c3fb477e4c93211bf3
