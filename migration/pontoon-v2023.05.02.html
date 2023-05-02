@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pontoon Debian v2021.03.23 &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
+  <title>Pontoon Debian v2023.05.02 &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Frequently Asked Questions" href="../faq.html" />
-    <link rel="prev" title="Pontoon Debian v2021.09.23" href="pontoon-v2021.09.23.html" /> 
+    <link rel="next" title="Pontoon Debian v2023.02.14" href="pontoon-v2023.02.14.html" />
+    <link rel="prev" title="Migration Guide" href="migration.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,7 +46,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../backup.html">Backuping and Restoring Pontoon</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Updating Pontoon</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="migration.html">Migration Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pontoon-v2023.05.02.html">Pontoon Debian v2023.05.02</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pontoon Debian v2023.05.02</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#release-details">Release Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#migration-instructions">Migration Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changelog">Changelog</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2023.02.14.html">Pontoon Debian v2023.02.14</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.09.12.html">Pontoon Debian v2022.09.12</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.06.27.html">Pontoon Debian v2022.06.27</a></li>
@@ -54,11 +59,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.02.09.html">Pontoon Debian v2022.02.09</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.12.06.html">Pontoon Debian v2021.12.06</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.09.23.html">Pontoon Debian v2021.09.23</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Pontoon Debian v2021.03.23</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#release-details">Release Details</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#migration-instructions">Migration Instructions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.03.23.html">Pontoon Debian v2021.03.23</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
@@ -80,9 +81,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Updating Pontoon</a> &raquo;</li>
-      <li>Pontoon Debian v2021.03.23</li>
+      <li>Pontoon Debian v2023.05.02</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/migration/pontoon-v2021.03.23.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/migration/pontoon-v2023.05.02.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -90,22 +91,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="pontoon-debian-v2021-03-23">
-<h1>Pontoon Debian v2021.03.23<a class="headerlink" href="#pontoon-debian-v2021-03-23" title="Permalink to this heading"></a></h1>
+  <section id="pontoon-debian-v2023-05-02">
+<h1>Pontoon Debian v2023.05.02<a class="headerlink" href="#pontoon-debian-v2023-05-02" title="Permalink to this heading"></a></h1>
 <section id="release-details">
 <h2>Release Details<a class="headerlink" href="#release-details" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>Migration from: None</p></li>
-<li><p>Built from commit: <a class="reference external" href="https://github.com/mozilla/pontoon/commit/c5641aadcf0ed2aed60add757a50ab9c2a2f81d5">c5641aadcf0ed2aed60add757a50ab9c2a2f81d5</a></p></li>
-<li><p>Tarball URL: <a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases/download/v2021.03.23.0/pontoon_2021.03.23.0.tar.gz">https://github.com/wanadev/pontoon-debian/releases/download/v2021.03.23.0/pontoon_2021.03.23.0.tar.gz</a></p></li>
+<li><p>Migration from: <a class="reference internal" href="pontoon-v2023.02.14.html"><span class="doc">Pontoon Debian v2023.02.14</span></a></p></li>
+<li><p>Built from commit: <a class="reference external" href="https://github.com/mozilla/pontoon/commit/45e52c6bc472a6106f16a0c52f0e767a4d36bc3b">45e52c6bc472a6106f16a0c52f0e767a4d36bc3b</a></p></li>
+<li><p>Tarball URL: <a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases/download/v2023.05.02.0/pontoon_2023.05.02.0.tar.gz">https://github.com/wanadev/pontoon-debian/releases/download/v2023.05.02.0/pontoon_2023.05.02.0.tar.gz</a></p></li>
 </ul>
 </section>
 <section id="migration-instructions">
 <h2>Migration Instructions<a class="headerlink" href="#migration-instructions" title="Permalink to this heading"></a></h2>
-<p>This is the first Pontoon Debian release, so there is no migration instruction. Just follow the installation guide:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../install/index.html"><span class="doc">Installing Pontoon on Debian and Ubuntu</span></a></p></li>
-</ul>
+<p>There is no specific migration instruction, just follow the <a class="reference internal" href="migration.html"><span class="doc">Migration Guide</span></a>.</p>
+</section>
+<section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading"></a></h2>
+<p><a class="reference external" href="https://github.com/mozilla/pontoon/compare/dad33918b8d12d945e5b14127211a858bf00e880...45e52c6bc472a6106f16a0c52f0e767a4d36bc3b">https://github.com/mozilla/pontoon/compare/dad33918b8d12d945e5b14127211a858bf00e880…45e52c6bc472a6106f16a0c52f0e767a4d36bc3b</a></p>
 </section>
 </section>
 
@@ -113,8 +115,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pontoon-v2021.09.23.html" class="btn btn-neutral float-left" title="Pontoon Debian v2021.09.23" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="migration.html" class="btn btn-neutral float-left" title="Migration Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pontoon-v2023.02.14.html" class="btn btn-neutral float-right" title="Pontoon Debian v2023.02.14" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
