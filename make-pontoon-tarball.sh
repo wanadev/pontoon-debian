@@ -6,7 +6,7 @@
 #  VERSION: The version of the Pontoon Debian release (default: date +%Y.%m.%d.0)
 
 PONTOON_REV=$1
-test -z "$PONTOON_REV" && PONTOON_REV=master
+test -z "$PONTOON_REV" && PONTOON_REV=update-parsimonious
 VERSION=$2
 test -z "$VERSION" && VERSION=$(date +%Y.%m.%d.0)
 
@@ -30,7 +30,7 @@ mkdir -p $OUTPUT_DIR
 mkdir -p $(dirname $OUTPUT_TARBALL)
 
 # Clone Pontoon
-git clone https://github.com/mozilla/pontoon.git $BUILD_DIR/$APP_NAME.git
+git clone https://github.com/flozz/pontoon.git $BUILD_DIR/$APP_NAME.git
 cd $BUILD_DIR/$APP_NAME.git
 git checkout $PONTOON_REV
 
