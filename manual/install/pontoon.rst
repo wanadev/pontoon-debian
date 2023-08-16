@@ -111,12 +111,7 @@ Rust ones, this is not covered by this manual)::
 
 Then we can install Pontoon's dependencies with the following command::
 
-    pip install -r requirements.txt       # Python >= 3.9
-    pip install -r requirements.py38.txt  # Python == 3.8
-
-.. NOTE::
-
-   You can run the ``python --version`` command to get your Python version.
+    pip install -r requirements.txt
 
 
 Temporary Fix: The "media" Folder
