@@ -31,3 +31,4 @@ This file is a memo for the maintainer.
 
 * Make a release on Github
 * Add changelog
+* Add the release tarball (``pontoon_YYYY.MM.DD.0.tar.gz``)
