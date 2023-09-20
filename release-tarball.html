@@ -93,7 +93,7 @@
 <li><p>“stable” releases,</p></li>
 <li><p>and nightly builds.</p></li>
 </ul>
-<p>The “stable” releases are built from Pontoon’s <code class="docutils literal notranslate"><span class="pre">master</span></code> and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the “stable” releases, go to our release page on Github:</p>
+<p>The “stable” releases are built from Pontoon’s <code class="docutils literal notranslate"><span class="pre">main</span></code> and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the “stable” releases, go to our release page on Github:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases">https://github.com/wanadev/pontoon-debian/releases</a></p></li>
 </ul>
@@ -127,12 +127,12 @@
 <p>Where</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PONTOON_REV</span></code> is any valid revision or reference in the Pontoon’s
-repository (e.g. <code class="docutils literal notranslate"><span class="pre">master</span></code>, <code class="docutils literal notranslate"><span class="pre">87697b7b</span></code>,…)</p></li>
+repository (e.g. <code class="docutils literal notranslate"><span class="pre">main</span></code>, <code class="docutils literal notranslate"><span class="pre">87697b7b</span></code>,…)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">VERSION</span></code> is a version number for your release tarball (e.g. <code class="docutils literal notranslate"><span class="pre">0.0.0.0</span></code>,
 <code class="docutils literal notranslate"><span class="pre">2021.05.05.0</span></code>,…)</p></li>
 </ul>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">make</span><span class="o">-</span><span class="n">pontoon</span><span class="o">-</span><span class="n">tarball</span><span class="o">.</span><span class="n">sh</span> <span class="n">master</span> <span class="mf">0.0.0.0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">make</span><span class="o">-</span><span class="n">pontoon</span><span class="o">-</span><span class="n">tarball</span><span class="o">.</span><span class="n">sh</span> <span class="n">main</span> <span class="mf">0.0.0.0</span>
 </pre></div>
 </div>
 <p>The output goes to <code class="docutils literal notranslate"><span class="pre">dist/pontoon_&lt;VERSION&gt;.tar.gz</span></code>.</p>
@@ -140,7 +140,7 @@ repository (e.g. <code class="docutils literal notranslate"><span class="pre">ma
 <section id="building-pontoon-debian-tarball-using-docker">
 <h2>Building Pontoon Debian Tarball using Docker<a class="headerlink" href="#building-pontoon-debian-tarball-using-docker" title="Permalink to this heading"></a></h2>
 <p>You can build the Pontoon Debian tarball from the <strong>latest commit of Pontoon’s
-master branch</strong> using Docker. To do so, run:</p>
+main branch</strong> using Docker. To do so, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">make</span><span class="o">-</span><span class="n">pontoon</span><span class="o">-</span><span class="n">tarball</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
