@@ -17,7 +17,7 @@ We have two types of prebuilt tarball releases:
 * "stable" releases,
 * and nightly builds.
 
-The "stable" releases are built from Pontoon's ``master`` and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the "stable" releases, go to our release page on Github:
+The "stable" releases are built from Pontoon's ``main`` and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the "stable" releases, go to our release page on Github:
 
 * https://github.com/wanadev/pontoon-debian/releases
 
@@ -50,14 +50,14 @@ Finaly build the tarball with the following command::
 Where
 
 * ``PONTOON_REV`` is any valid revision or reference in the Pontoon's
-  repository (e.g. ``master``, ``87697b7b``,...)
+  repository (e.g. ``main``, ``87697b7b``,...)
 
 * ``VERSION`` is a version number for your release tarball (e.g. ``0.0.0.0``,
   ``2021.05.05.0``,...)
 
 Example::
 
-    ./make-pontoon-tarball.sh master 0.0.0.0
+    ./make-pontoon-tarball.sh main 0.0.0.0
 
 The output goes to ``dist/pontoon_<VERSION>.tar.gz``.
 
@@ -66,6 +66,6 @@ Building Pontoon Debian Tarball using Docker
 --------------------------------------------
 
 You can build the Pontoon Debian tarball from the **latest commit of Pontoon's
-master branch** using Docker. To do so, run::
+main branch** using Docker. To do so, run::
 
     ./make-pontoon-tarball-docker.sh

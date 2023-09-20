@@ -2,11 +2,11 @@
 
 # Dependencies: build-essential git python3 python3-dev python3-venv nodejs npm
 # Usage: ./make-pontoon-tarball.sh [PONTOON_REV [VERSION]]
-#  PONTOON_REV: Pontoon's revision (git) to release (default: master)
+#  PONTOON_REV: Pontoon's revision (git) to release (default: main)
 #  VERSION: The version of the Pontoon Debian release (default: date +%Y.%m.%d.0)
 
 PONTOON_REV=$1
-test -z "$PONTOON_REV" && PONTOON_REV=master
+test -z "$PONTOON_REV" && PONTOON_REV=main
 VERSION=$2
 test -z "$VERSION" && VERSION=$(date +%Y.%m.%d.0)
 
