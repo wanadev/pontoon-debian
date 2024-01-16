@@ -12,3 +12,7 @@ Pontoon on Debian and Ubuntu.
 Read more on our online manual:
 
 * https://wanadev.github.io/pontoon-debian/
+
+Mozilla's Pontoon repository:
+
+* https://github.com/mozilla/pontoon
