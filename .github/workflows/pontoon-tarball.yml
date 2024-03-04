@@ -53,10 +53,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Debian 11 (bullseye)"  # -> 2026-06
-            os: ubuntu-20.04
-            python-version: "3.9"
-            postgres-version: 13
           - name: "Debian 12 (bookworm)"  # -> 2028-06
             os: ubuntu-22.04
             python-version: "3.11"
