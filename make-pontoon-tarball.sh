@@ -66,11 +66,9 @@ deactivate
 # Copy files
 cp -vr static/ $OUTPUT_DIR
 cp -vr pontoon/ $OUTPUT_DIR
-cp -vr tag-admin/ $OUTPUT_DIR
 cp -vr translate/ $OUTPUT_DIR
 cp -vr requirements/ $OUTPUT_DIR
 cp -v setup.py $OUTPUT_DIR
-cp -v setup.cfg $OUTPUT_DIR
 cp -v manage.py $OUTPUT_DIR
 cp -v requirements.txt $OUTPUT_DIR
 cp -v LICENSE $OUTPUT_DIR
