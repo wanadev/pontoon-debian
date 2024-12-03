@@ -21,6 +21,12 @@ run the synchronization every hour::
 For more information, read `the crontab documentation
 <https://www.man7.org/linux/man-pages/man5/crontab.5.html>`_.
 
+You can also fetch other tasks mentioned on the `Pontoon documentation
+<https://github.com/mozilla/pontoon/blob/main/docs/admin/deployment.rst#scheduled-jobs>`_.
+For example, to have insights be fetched at the start of each day::
+
+    0 6 * * * /opt/pontoon/current/debian/collect-insights.sh
+
 Once done, you can leave from the ``pontoon`` shell using the ``exit`` command.
 
 .. NOTE::
