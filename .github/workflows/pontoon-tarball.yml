@@ -32,10 +32,10 @@ jobs:
       - name: Set up Python 3.11
         run: uv python install 3.11
 
-      - name: "Set up Node 16"
+      - name: "Set up Node 20"
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: "Make Pontoon release tarball"
         run: |
