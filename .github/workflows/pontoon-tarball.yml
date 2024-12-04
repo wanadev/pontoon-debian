@@ -103,6 +103,8 @@ jobs:
       - name: "Install Python dependencies"
         run: |
           cd pontoon-*
+          python -m pip install pip-tools
+          pip-compile --generate-hashes requirements/default.in -o requirements/default.txt
           pip install -r requirements.txt
 
       - name: "Make DB Migration"
