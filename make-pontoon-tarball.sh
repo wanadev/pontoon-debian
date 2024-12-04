@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Dependencies: build-essential git python3 python3-dev python3-venv nodejs npm
+# Dependencies: build-essential git uv python3 python3-dev python3-venv nodejs npm
 # Usage: ./make-pontoon-tarball.sh [PONTOON_REV [VERSION]]
 #  PONTOON_REV: Pontoon's revision (git) to release (default: main)
 #  VERSION: The version of the Pontoon Debian release (default: date +%Y.%m.%d.0)
@@ -34,19 +34,17 @@ cd $BUILD_DIR/$APP_NAME.git
 git checkout $PONTOON_REV
 
 # Prepare Python Virtual Environment
-python3 -m venv __env__
+uv venv __env__
 source __env__/bin/activate
-pip install --upgrade pip==23.1.1  # Pip version fixed because it breaks pip-tools everytime...
-pip install pip-tools # Required for pip-compile
 
 # Compile dependencies (Replicating: https://github.com/mozilla/pontoon/blob/d619331f62b28fd69d3f998d97e4343dd0ed6bc4/docker/compile_requirements.sh)
-pip-compile --generate-hashes requirements/default.in -o requirements/default.txt
-pip-compile --generate-hashes requirements/dev.in -o requirements/dev.txt
-pip-compile --generate-hashes requirements/lint.in -o requirements/lint.txt
-pip-compile --generate-hashes requirements/test.in -o requirements/test.txt
+uv pip compile --generate-hashes requirements/default.in -o requirements/default.txt
+uv pip compile --generate-hashes requirements/dev.in -o requirements/dev.txt
+uv pip compile --generate-hashes requirements/lint.in -o requirements/lint.txt
+uv pip compile --generate-hashes requirements/test.in -o requirements/test.txt
 
 # Install Python dependencies
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 
 # Install Node dependencies
 npm install
@@ -58,7 +56,7 @@ export DJANGO_DEBUG=True
 
 # Build the front
 npm run build:prod
-python3 manage.py collectstatic
+uv run manage.py collectstatic
 
 # Leave the virtualenv
 deactivate
