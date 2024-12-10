@@ -37,6 +37,9 @@ git checkout $PONTOON_REV
 uv --version > /dev/null 2>&1 && uv venv __env__ || python3 -m venv __env__
 source __env__/bin/activate
 
+# Collect info about the environment
+PYTHON_MAJOR=$(python -c "import sys;print(sys.version_info.major)")
+PYTHON_MINOR=$(python -c "import sys;print(sys.version_info.minor)")
 uv --version > /dev/null 2>&1 && UV_AVAILABLE=1 || UV_AVAILABLE=0
 
 # Install uv in the venv if not available
@@ -52,6 +55,9 @@ uv pip compile --generate-hashes requirements/test.in -o requirements/test.txt
 
 # Install Python dependencies
 uv pip install -r requirements.txt
+if [ $PYTHON_MAJOR == 3 ] && [ $PYTHON_MINOR -ge 12 ] ; then
+    uv pip install setuptools
+fi
 
 # Install Node dependencies
 npm install
