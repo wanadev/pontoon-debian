@@ -62,6 +62,10 @@ jobs:
             os: ubuntu-22.04
             python-version: "3.10"
             postgres-version: 14
+          - name: "Ubuntu 24.04 (noble)"  # -> 2029-04
+            os: ubuntu-24.04
+            python-version: "3.12"
+            postgres-version: 16
 
     name: "${{ matrix.name }} [py${{ matrix.python-version }}, pg${{ matrix.postgres-version }}]"
     needs: build
@@ -100,11 +104,16 @@ jobs:
           echo "DATABASE_URL=postgres://pontoonuser:pontoonpassword@localhost/pontoondb" >> .env
           echo "DJANGO_DEBUG=True" >> .env
 
-      - name: "Install Python dependencies"
+      - name: "Install Python dependencies (Python == 3.10)"
+        if: ${{ matrix.python-version == "3.10" }}
         run: |
           cd pontoon-*
-          python -m pip install pip-tools
-          pip-compile --generate-hashes requirements/default.in -o requirements/default.txt
+          pip install -r requirements.py310.txt
+
+      - name: "Install Python dependencies (Python != 3.10)"
+        if: ${{ matrix.python-version != "3.10" }}
+        run: |
+          cd pontoon-*
           pip install -r requirements.txt
 
       - name: "Make DB Migration"
