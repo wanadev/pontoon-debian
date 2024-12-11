@@ -26,22 +26,23 @@ jobs:
       - name: "Checkout the repository"
         uses: actions/checkout@v4
 
-      - name: "Set up Python 3.11"
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
 
-      - name: "Set up Node 16"
+      - name: Set up Python 3.11
+        run: uv python install 3.11
+
+      - name: "Set up Node 20"
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: "Make Pontoon release tarball"
         run: |
           ./make-pontoon-tarball.sh
 
       - name: "Upload artifacts"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pontoon-release-tarball
           path: ./dist/
@@ -84,7 +85,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: "Download Pontoon release tarball"
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: pontoon-release-tarball
 
@@ -102,6 +103,8 @@ jobs:
       - name: "Install Python dependencies"
         run: |
           cd pontoon-*
+          python -m pip install pip-tools
+          pip-compile --generate-hashes requirements/default.in -o requirements/default.txt
           pip install -r requirements.txt
 
       - name: "Make DB Migration"

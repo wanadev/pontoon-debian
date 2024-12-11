@@ -33,11 +33,35 @@ git clone https://github.com/mozilla/pontoon.git $BUILD_DIR/$APP_NAME.git
 cd $BUILD_DIR/$APP_NAME.git
 git checkout $PONTOON_REV
 
-# Install Python dependencies
-python3 -m venv __env__
+# Prepare Python Virtual Environment using uv if available else using venv
+uv --version > /dev/null 2>&1 && uv venv __env__ || python3 -m venv __env__
 source __env__/bin/activate
-pip install --upgrade pip==23.1.1  # Pip version fixed because it breaks pip-tools everytime...
-pip install -r requirements.txt
+
+# Collect info about the environment
+PYTHON_MAJOR=$(python -c "import sys;print(sys.version_info.major)")
+PYTHON_MINOR=$(python -c "import sys;print(sys.version_info.minor)")
+uv --version > /dev/null 2>&1 && UV_AVAILABLE=1 || UV_AVAILABLE=0
+
+# Install uv in the venv if not available
+if [ $UV_AVAILABLE != 1 ] ; then
+   pip install uv
+fi
+
+# Compile dependencies (Replicating: https://github.com/mozilla/pontoon/blob/d619331f62b28fd69d3f998d97e4343dd0ed6bc4/docker/compile_requirements.sh)
+uv pip compile --generate-hashes requirements/default.in -o requirements/default.txt
+uv pip compile --generate-hashes requirements/dev.in -o requirements/dev.txt
+uv pip compile --generate-hashes requirements/lint.in -o requirements/lint.txt
+uv pip compile --generate-hashes requirements/test.in -o requirements/test.txt
+
+# Compile additional dependencies for Python 3.10
+cp $DEBIAN_DIR/requirements.py310.in $BUILD_DIR/$APP_NAME.git/
+uv pip compile --generate-hashes $BUILD_DIR/$APP_NAME.git/requirements.py310.in -o $OUTPUT_DIR/requirements.py310.txt
+
+# Install Python dependencies
+uv pip install -r requirements.txt
+if [ $PYTHON_MAJOR == 3 ] && [ $PYTHON_MINOR -ge 12 ] ; then
+    uv pip install setuptools
+fi
 
 # Install Node dependencies
 npm install
@@ -49,7 +73,7 @@ export DJANGO_DEBUG=True
 
 # Build the front
 npm run build:prod
-python3 manage.py collectstatic
+uv run manage.py collectstatic
 
 # Leave the virtualenv
 deactivate
@@ -57,11 +81,9 @@ deactivate
 # Copy files
 cp -vr static/ $OUTPUT_DIR
 cp -vr pontoon/ $OUTPUT_DIR
-cp -vr tag-admin/ $OUTPUT_DIR
 cp -vr translate/ $OUTPUT_DIR
 cp -vr requirements/ $OUTPUT_DIR
 cp -v setup.py $OUTPUT_DIR
-cp -v setup.cfg $OUTPUT_DIR
 cp -v manage.py $OUTPUT_DIR
 cp -v requirements.txt $OUTPUT_DIR
 cp -v LICENSE $OUTPUT_DIR
