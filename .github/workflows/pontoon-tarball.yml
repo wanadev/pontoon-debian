@@ -105,13 +105,13 @@ jobs:
           echo "DJANGO_DEBUG=True" >> .env
 
       - name: "Install Python dependencies (Python == 3.10)"
-        if: ${{ matrix.python-version == "3.10" }}
+        if: ${{ matrix.python-version == '3.10' }}
         run: |
           cd pontoon-*
           pip install -r requirements.py310.txt
 
       - name: "Install Python dependencies (Python != 3.10)"
-        if: ${{ matrix.python-version != "3.10" }}
+        if: ${{ matrix.python-version != '3.10' }}
         run: |
           cd pontoon-*
           pip install -r requirements.txt
