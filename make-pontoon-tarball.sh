@@ -53,6 +53,10 @@ uv pip compile --generate-hashes requirements/dev.in -o requirements/dev.txt
 uv pip compile --generate-hashes requirements/lint.in -o requirements/lint.txt
 uv pip compile --generate-hashes requirements/test.in -o requirements/test.txt
 
+# Compile additional dependencies for Python 3.10
+cp $DEBIAN_DIR/requirements.py310.in $BUILD_DIR/$APP_NAME.git/
+uv pip compile --generate-hashes $BUILD_DIR/$APP_NAME.git/requirements.py310.in -o $OUTPUT_DIR/requirements.py310.txt
+
 # Install Python dependencies
 uv pip install -r requirements.txt
 if [ $PYTHON_MAJOR == 3 ] && [ $PYTHON_MINOR -ge 12 ] ; then
