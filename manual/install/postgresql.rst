@@ -89,6 +89,21 @@ Where:
 * ``pontoondb`` is the name of the database,
 * ``pontoonuser`` is the name of the user.
 
+
+.. WARNING::
+
+   Since PostgreSQL 15 (Debian >= 12, Ubuntu >= 24.04), the grant is not
+   sufficient and the user must also be set as the owner of the database:
+
+   .. code-block:: SQL
+
+      ALTER DATABASE pontoondb OWNER TO pontoonuser;
+
+   Where:
+
+   * ``pontoondb`` is the name of the database,
+   * ``pontoonuser`` is the name of the user.
+
 You can now:
 
 * exit the PostgreSQL console with the ``\q`` command,
