@@ -64,7 +64,15 @@ Finally, create the virtualenv::
 
 And install the dependencies::
 
-    pip install -r requirements.txt
+    pip install -r requirements.txt        # Python >= 3.11
+    pip install -r requirements.py310.txt  # Python 3.10 (Ubuntu 22.04)
+
+.. WARNING::
+
+   Since Python 3.12, you also need to install ``setuptools`` by hand in the
+   virtualenv::
+
+       pip install setuptools  # Python >= 3.12 (Ubuntu 24.04)
 
 
 4. Migrate the Database

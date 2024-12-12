@@ -17,26 +17,32 @@ We have two types of prebuilt tarball releases:
 * "stable" releases,
 * and nightly builds.
 
-The "stable" releases are built from Pontoon's ``main`` and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the "stable" releases, go to our release page on Github:
+The "stable" releases are built from Pontoon's ``main`` and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the "stable" releases, go to our release page on GitHub:
 
 * https://github.com/wanadev/pontoon-debian/releases
 
-The nightly builds are automatically generated every night and are not tested nor documented. They should be used only for testing purpose. You will find nightly builds as artifacts of the Github Actions pipelines :
+The nightly builds are automatically generated every night and are not tested nor documented. They should be used only for testing purpose. You will find nightly builds as artifacts of the GitHub Actions pipelines :
 
 * https://github.com/wanadev/pontoon-debian/actions/workflows/pontoon-tarball.yml
 
 .. NOTE::
 
    * You can only download nightly builds from the last 14 days.
-   * You must be connected to your Github account to download artifacts.
+   * You must be connected to your GitHub account to download artifacts.
 
 
 Building Pontoon Debian Tarball
 -------------------------------
 
+Requirements:
+
+* Debian 12 or Ubuntu 24.04 (Ubuntu 22.04 will also work but only with an updated Node.js version)
+* Python >= 3.10 (3.11 recommanded)
+* Node.js >= 18
+
 First install some dependencies::
 
-    sudo apt install git python3 python3-dev python3-venv nodejs npm
+    sudo apt install build-essential postgresql-server-dev-all git python3 python3-dev python3-venv nodejs npm
 
 Then clone the Git repository and navigate to it::
 

@@ -93,7 +93,7 @@ prefixed by ``(__env__)``.
 .. NOTE::
 
    If you want to leave the *virtualenv*, just use the ``deactivate`` command.
-   You will be able to activate it again with the ``cd /etc/pontoon/current &&
+   You will be able to activate it again with the ``cd /opt/pontoon/current &&
    source __env__/bin/activate`` commands.
 
 
@@ -104,14 +104,23 @@ To install the dependencies, you should run the following commands from within
 the *virtualenv* (see above).
 
 First we will **update pip**, the Python's package manager (with an older *pip*
-version, you may have to compile additional dependencies, including C++ and
-Rust ones, this is not covered by this manual)::
+version, you may have to compile additional dependencies or have wrong
+dependency resolution)::
 
     pip install --upgrade pip
 
-Then we can install Pontoon's dependencies with the following command::
+Then we can install Pontoon's dependencies with **ONE** of the following
+commands::
 
-    pip install -r requirements.txt
+    pip install -r requirements.txt        # Python >= 3.11
+    pip install -r requirements.py310.txt  # Python 3.10 (Ubuntu 22.04)
+
+.. WARNING::
+
+   Since Python 3.12, you also need to install ``setuptools`` by hand in the
+   virtualenv::
+
+       pip install setuptools  # Python >= 3.12 (Ubuntu 24.04)
 
 
 Temporary Fix: The "media" Folder
@@ -149,7 +158,7 @@ To allow Pontoon to run, you will have to configure at least the following
 settings:
 
 * ``SITE_URL``: The base URL for the Pontoon installation. Please note that the
-  use of TLS (HTTPS) is not optional.
+  use of **TLS (HTTPS) is not optional**.
 
   Example::
 
@@ -192,28 +201,28 @@ We will proceed with the following steps:
 
 First we can create the Pontoon's SSH key with the following command::
 
-    su pontoon -c "ssh-keygen -N '' -f ~/.ssh/id_rsa"
+    su pontoon -c "ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519"
 
 You should now have two files in ``/var/opt/pontoon/.ssh``:
 
-* ``id_rsa``: The private SSH key that will be used locally by Git,
-* ``id_rsa.pub``: The public key you will have to configure on your Git server
-  (Gitlab, Github,...).
+* ``id_ed25519``: The private SSH key that will be used locally by Git,
+* ``id_ed25519.pub``: The public key you will have to configure on your Git server
+  (GitLab, GitHub,...).
 
 To allow Git to use our newly generated key we should uncomment and configure
 the ``GIT_SSH_COMMAND`` setting in the ``/etc/opt/pontoon.env`` file::
 
-    GIT_SSH_COMMAND="ssh -v -i /var/opt/pontoon/.ssh/id_rsa"
+    GIT_SSH_COMMAND="ssh -v -i /var/opt/pontoon/.ssh/id_ed25519"
 
-Then you will have to create an user on you Git server (Gitlab, Github,...) and
-to add the Pontoon's public SSH key (``/var/opt/pontoon/.ssh/id_rsa.pub``) to
+Then you will have to create an user on you Git server (GitLab, GitHub,...) and
+to add the Pontoon's public SSH key (``/var/opt/pontoon/.ssh/id_ed25519.pub``) to
 it.
 
 Once the user created and the key added, you should initiate a first SSH
 connection to the Git server to add it to the known hosts::
 
     su pontoon
-    ssh -i ~/.ssh/id_rsa git@git.example.org
+    ssh -i ~/.ssh/id_ed25519 git@git.example.org
 
 Where:
 
