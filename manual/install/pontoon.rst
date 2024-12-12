@@ -93,7 +93,7 @@ prefixed by ``(__env__)``.
 .. NOTE::
 
    If you want to leave the *virtualenv*, just use the ``deactivate`` command.
-   You will be able to activate it again with the ``cd /etc/pontoon/current &&
+   You will be able to activate it again with the ``cd /opt/pontoon/current &&
    source __env__/bin/activate`` commands.
 
 
