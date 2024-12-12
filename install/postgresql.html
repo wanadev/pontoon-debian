@@ -60,6 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backup.html">Backuping and Restoring Pontoon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Updating Pontoon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
 </ul>
 
@@ -164,6 +165,19 @@ following query:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">pontoondb</span></code> is the name of the database,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pontoonuser</span></code> is the name of the user.</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since PostgreSQL 15 (Debian &gt;= 12, Ubuntu &gt;= 24.04), the grant is not
+sufficient and the user must also be set as the owner of the database:</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">pontoondb</span><span class="w"> </span><span class="k">OWNER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">pontoonuser</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pontoondb</span></code> is the name of the database,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pontoonuser</span></code> is the name of the user.</p></li>
+</ul>
+</div>
 <p>You can now:</p>
 <ul class="simple">
 <li><p>exit the PostgreSQL console with the <code class="docutils literal notranslate"><span class="pre">\q</span></code> command,</p></li>

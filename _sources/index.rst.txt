@@ -13,4 +13,5 @@ This manual documents the installation and the maintenance of Pontoon on Debian 
    ./backup.rst
    ./migration/index.rst
    ./faq.rst
+   ./troubleshooting.rst
    ./contributing.rst

@@ -51,6 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="backup.html">Backuping and Restoring Pontoon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="migration/index.html">Updating Pontoon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -93,11 +94,11 @@
 <li><p>“stable” releases,</p></li>
 <li><p>and nightly builds.</p></li>
 </ul>
-<p>The “stable” releases are built from Pontoon’s <code class="docutils literal notranslate"><span class="pre">main</span></code> and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the “stable” releases, go to our release page on Github:</p>
+<p>The “stable” releases are built from Pontoon’s <code class="docutils literal notranslate"><span class="pre">main</span></code> and are then tested on our side and the migration from the previous stable release is documented. This is the recommended versions to use in production. To download the “stable” releases, go to our release page on GitHub:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases">https://github.com/wanadev/pontoon-debian/releases</a></p></li>
 </ul>
-<p>The nightly builds are automatically generated every night and are not tested nor documented. They should be used only for testing purpose. You will find nightly builds as artifacts of the Github Actions pipelines :</p>
+<p>The nightly builds are automatically generated every night and are not tested nor documented. They should be used only for testing purpose. You will find nightly builds as artifacts of the GitHub Actions pipelines :</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/wanadev/pontoon-debian/actions/workflows/pontoon-tarball.yml">https://github.com/wanadev/pontoon-debian/actions/workflows/pontoon-tarball.yml</a></p></li>
 </ul>
@@ -105,14 +106,20 @@
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>You can only download nightly builds from the last 14 days.</p></li>
-<li><p>You must be connected to your Github account to download artifacts.</p></li>
+<li><p>You must be connected to your GitHub account to download artifacts.</p></li>
 </ul>
 </div>
 </section>
 <section id="building-pontoon-debian-tarball">
 <h2>Building Pontoon Debian Tarball<a class="headerlink" href="#building-pontoon-debian-tarball" title="Permalink to this heading"></a></h2>
+<p>Requirements:</p>
+<ul class="simple">
+<li><p>Debian 12 or Ubuntu 24.04 (Ubuntu 22.04 will also work but only with an updated Node.js version)</p></li>
+<li><p>Python &gt;= 3.10 (3.11 recommanded)</p></li>
+<li><p>Node.js &gt;= 18</p></li>
+</ul>
 <p>First install some dependencies:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">git</span> <span class="n">python3</span> <span class="n">python3</span><span class="o">-</span><span class="n">dev</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span> <span class="n">nodejs</span> <span class="n">npm</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">postgresql</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="nb">all</span> <span class="n">git</span> <span class="n">python3</span> <span class="n">python3</span><span class="o">-</span><span class="n">dev</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span> <span class="n">nodejs</span> <span class="n">npm</span>
 </pre></div>
 </div>
 <p>Then clone the Git repository and navigate to it:</p>

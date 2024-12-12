@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Troubleshooting &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Pontoon Debian Administrator's Manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="foreword.html">Foreword</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-tarball.html">Getting Pontoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install/index.html">Installing Pontoon on Debian and Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">Backuping and Restoring Pontoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration/index.html">Updating Pontoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#errors-about-unpinned-modules-during-pip-install">Errors about unpinned modules during pip install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-distutils-module-when-running-manage-py-commands">Missing “distutils” module when running “manage.py” commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#permission-issue-on-database-migration-psycopg2-permission-denied">Permission issue on database migration (psycopg2 permission denied)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pontoon Debian Administrator's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/troubleshooting.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h1>
+<section id="errors-about-unpinned-modules-during-pip-install">
+<h2>Errors about unpinned modules during pip install<a class="headerlink" href="#errors-about-unpinned-modules-during-pip-install" title="Permalink to this heading"></a></h2>
+<p>When you install Pontoon dependencies using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>,
+you may encounter errors similar to this one:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">In</span> <span class="o">--</span><span class="n">require</span><span class="o">-</span><span class="n">hashes</span> <span class="n">mode</span><span class="p">,</span> <span class="nb">all</span> <span class="n">requirements</span> <span class="n">must</span> <span class="n">have</span> <span class="n">their</span> <span class="n">versions</span> <span class="n">pinned</span> <span class="k">with</span> <span class="o">==.</span> <span class="n">These</span> <span class="n">do</span> <span class="ow">not</span><span class="p">:</span>
+    <span class="n">googleapis</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">protos</span><span class="o">&lt;</span><span class="mf">2.0</span><span class="o">.</span><span class="n">dev0</span><span class="p">,</span><span class="o">&gt;=</span><span class="mf">1.56.2</span> <span class="kn">from</span> <span class="nn">https</span><span class="p">:</span><span class="o">//</span><span class="n">files</span><span class="o">.</span><span class="n">pythonhosted</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">packages</span><span class="o">/</span><span class="n">a0</span><span class="o">/</span><span class="mi">0</span><span class="n">f</span><span class="o">/</span><span class="n">c0713fb2b3d28af4b2fded3291df1c4d4f79a00d15c2374a9e010870016c</span><span class="o">/</span><span class="n">googleapis_common_protos</span><span class="o">-</span><span class="mf">1.66.0</span><span class="o">-</span><span class="n">py2</span><span class="o">.</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">google</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">core</span><span class="p">[</span><span class="n">grpc</span><span class="p">]</span><span class="o">==</span><span class="mf">2.20.0</span><span class="o">-&gt;-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">txt</span> <span class="p">(</span><span class="n">line</span> <span class="mi">369</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This can be caused by a not up to date pip. In this case try to update the pip
+version inside the virtualenv:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pontoon</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="n">__env__</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+</pre></div>
+</div>
+<p>Some Python versions also requires specific dependencies. Check in the Pontoon
+folder if there is a <code class="docutils literal notranslate"><span class="pre">requirements.pyXYY.txt</span></code> file specific to your Python
+version. For example, if you are using Python 3.10, you should install
+dependencies from <code class="docutils literal notranslate"><span class="pre">requirements.py310.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">py310</span><span class="o">.</span><span class="n">txt</span>  <span class="c1"># Python 3.10</span>
+</pre></div>
+</div>
+<p>Finally, note that only CPython versions listed in the compatibility table are
+supported:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="install/requirements.html"><span class="doc">Requirements</span></a></p></li>
+</ul>
+</section>
+<section id="missing-distutils-module-when-running-manage-py-commands">
+<h2>Missing “distutils” module when running “manage.py” commands<a class="headerlink" href="#missing-distutils-module-when-running-manage-py-commands" title="Permalink to this heading"></a></h2>
+<p>If you are using Python 3.12 and above, Django may complain about missing <code class="docutils literal notranslate"><span class="pre">distutils</span></code> module when running <code class="docutils literal notranslate"><span class="pre">manage.py</span></code> commands, displaying errors like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="kn">from</span> <span class="nn">distutils.version</span> <span class="kn">import</span> \
+<span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;distutils&#39;</span>
+</pre></div>
+</div>
+<p>In this happen, install the <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> package to the virtualenv:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pontoon</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="n">__env__</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">pip</span> <span class="n">install</span> <span class="n">setuptools</span>
+</pre></div>
+</div>
+</section>
+<section id="permission-issue-on-database-migration-psycopg2-permission-denied">
+<h2>Permission issue on database migration (psycopg2 permission denied)<a class="headerlink" href="#permission-issue-on-database-migration-psycopg2-permission-denied" title="Permalink to this heading"></a></h2>
+<p>When running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code> to create or update the database schema, you may encounter the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Operations</span> <span class="n">to</span> <span class="n">perform</span><span class="p">:</span>
+  <span class="n">Apply</span> <span class="nb">all</span> <span class="n">migrations</span><span class="p">:</span> <span class="n">account</span><span class="p">,</span> <span class="n">actionlog</span><span class="p">,</span> <span class="n">admin</span><span class="p">,</span> <span class="n">auth</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">checks</span><span class="p">,</span> <span class="n">contenttypes</span><span class="p">,</span> <span class="n">guardian</span><span class="p">,</span> <span class="n">homepage</span><span class="p">,</span> <span class="n">insights</span><span class="p">,</span> <span class="n">messaging</span><span class="p">,</span> <span class="n">notifications</span><span class="p">,</span> <span class="n">sessions</span><span class="p">,</span> <span class="n">sites</span><span class="p">,</span> <span class="n">socialaccount</span><span class="p">,</span> <span class="n">sync</span><span class="p">,</span> <span class="n">tags</span><span class="p">,</span> <span class="n">terminology</span><span class="p">,</span> <span class="n">tour</span><span class="p">,</span> <span class="n">uxactionlog</span>
+<span class="n">Running</span> <span class="n">migrations</span><span class="p">:</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/opt/pontoon/pontoon-2024.12.11.0/__env__/lib/python3.12/site-packages/django/db/backends/utils.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">87</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_execute</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+           <span class="o">^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<span class="n">psycopg2</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">InsufficientPrivilege</span><span class="p">:</span> <span class="n">permission</span> <span class="n">denied</span> <span class="k">for</span> <span class="n">schema</span> <span class="n">public</span>
+<span class="n">LINE</span> <span class="mi">1</span><span class="p">:</span> <span class="n">CREATE</span> <span class="n">TABLE</span> <span class="s2">&quot;django_migrations&quot;</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span> <span class="n">integer</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">PRIM</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>Since PostgreSQL 15, granting permissions to an user seems to not be sufficient so you should change the database’s ownership to the user used by Pontoon:</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">pontoondb</span><span class="w"> </span><span class="k">OWNER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">pontoonuser</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pontoondb</span></code> is the name of the database,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pontoonuser</span></code> is the name of the user.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Wanadev.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -58,6 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backup.html">Backuping and Restoring Pontoon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Updating Pontoon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
 </ul>
 
@@ -123,7 +124,7 @@ get one for free using <a class="reference external" href="https://letsencrypt.o
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>You can show the complete file <a class="reference external" href="https://github.com/wanadev/pontoon-debian/blob/master/debian/pontoon.nginx.conf">on Github</a>.</p>
+<p>You can show the complete file <a class="reference external" href="https://github.com/wanadev/pontoon-debian/blob/master/debian/pontoon.nginx.conf">on GitHub</a>.</p>
 <p>Once configured, you just have to enable the <em>vhost</em> by creating a symbolic
 link:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">available</span><span class="o">/</span><span class="n">pontoon</span><span class="o">.</span><span class="n">nginx</span><span class="o">.</span><span class="n">conf</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">pontoon</span><span class="o">.</span><span class="n">nginx</span><span class="o">.</span><span class="n">conf</span>

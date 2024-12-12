@@ -72,6 +72,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backup.html">Backuping and Restoring Pontoon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Updating Pontoon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
 </ul>
 
@@ -185,7 +186,7 @@ activated. You will just have to repeat the <code class="docutils literal notran
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you want to leave the <em>virtualenv</em>, just use the <code class="docutils literal notranslate"><span class="pre">deactivate</span></code> command.
-You will be able to activate it again with the <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/etc/pontoon/current</span> <span class="pre">&amp;&amp;</span>
+You will be able to activate it again with the <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/opt/pontoon/current</span> <span class="pre">&amp;&amp;</span>
 <span class="pre">source</span> <span class="pre">__env__/bin/activate</span></code> commands.</p>
 </div>
 </section>
@@ -194,14 +195,24 @@ You will be able to activate it again with the <code class="docutils literal not
 <p>To install the dependencies, you should run the following commands from within
 the <em>virtualenv</em> (see above).</p>
 <p>First we will <strong>update pip</strong>, the Python’s package manager (with an older <em>pip</em>
-version, you may have to compile additional dependencies, including C++ and
-Rust ones, this is not covered by this manual):</p>
+version, you may have to compile additional dependencies or have wrong
+dependency resolution):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
 </pre></div>
 </div>
-<p>Then we can install Pontoon’s dependencies with the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<p>Then we can install Pontoon’s dependencies with <strong>ONE</strong> of the following
+commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>        <span class="c1"># Python &gt;= 3.11</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">py310</span><span class="o">.</span><span class="n">txt</span>  <span class="c1"># Python 3.10 (Ubuntu 22.04)</span>
 </pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since Python 3.12, you also need to install <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> by hand in the
+virtualenv:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">setuptools</span>  <span class="c1"># Python &gt;= 3.12 (Ubuntu 24.04)</span>
+</pre></div>
+</div>
 </div>
 </section>
 <section id="temporary-fix-the-media-folder">
@@ -234,7 +245,7 @@ command:</p>
 settings:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">SITE_URL</span></code>: The base URL for the Pontoon installation. Please note that the
-use of TLS (HTTPS) is not optional.</p>
+use of <strong>TLS (HTTPS) is not optional</strong>.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SITE_URL</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pontoon</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
@@ -276,27 +287,27 @@ Pontoon to <code class="docutils literal notranslate"><span class="pre">clone</s
 <li><p>initiate the first connection between our server and the Git server.</p></li>
 </ol>
 <p>First we can create the Pontoon’s SSH key with the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">pontoon</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;ssh-keygen -N &#39;&#39; -f ~/.ssh/id_rsa&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">pontoon</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;ssh-keygen -t ed25519 -N &#39;&#39; -f ~/.ssh/id_ed25519&quot;</span>
 </pre></div>
 </div>
 <p>You should now have two files in <code class="docutils literal notranslate"><span class="pre">/var/opt/pontoon/.ssh</span></code>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">id_rsa</span></code>: The private SSH key that will be used locally by Git,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>: The public key you will have to configure on your Git server
-(Gitlab, Github,…).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code>: The private SSH key that will be used locally by Git,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_ed25519.pub</span></code>: The public key you will have to configure on your Git server
+(GitLab, GitHub,…).</p></li>
 </ul>
 <p>To allow Git to use our newly generated key we should uncomment and configure
 the <code class="docutils literal notranslate"><span class="pre">GIT_SSH_COMMAND</span></code> setting in the <code class="docutils literal notranslate"><span class="pre">/etc/opt/pontoon.env</span></code> file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GIT_SSH_COMMAND</span><span class="o">=</span><span class="s2">&quot;ssh -v -i /var/opt/pontoon/.ssh/id_rsa&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GIT_SSH_COMMAND</span><span class="o">=</span><span class="s2">&quot;ssh -v -i /var/opt/pontoon/.ssh/id_ed25519&quot;</span>
 </pre></div>
 </div>
-<p>Then you will have to create an user on you Git server (Gitlab, Github,…) and
-to add the Pontoon’s public SSH key (<code class="docutils literal notranslate"><span class="pre">/var/opt/pontoon/.ssh/id_rsa.pub</span></code>) to
+<p>Then you will have to create an user on you Git server (GitLab, GitHub,…) and
+to add the Pontoon’s public SSH key (<code class="docutils literal notranslate"><span class="pre">/var/opt/pontoon/.ssh/id_ed25519.pub</span></code>) to
 it.</p>
 <p>Once the user created and the key added, you should initiate a first SSH
 connection to the Git server to add it to the known hosts:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">pontoon</span>
-<span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span> <span class="n">git</span><span class="nd">@git</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
+<span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span> <span class="n">git</span><span class="nd">@git</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
 </pre></div>
 </div>
 <p>Where:</p>

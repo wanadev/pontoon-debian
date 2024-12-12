@@ -5,7 +5,7 @@ To run Pontoon at startup, you will have to install a *systemd* service unit
 file and to enable it.
 
 We provide a `ready to use service unit
-<https://github.com/wanadev/pontoon-debian/blob/master/debian/pontoon.service>`_
+<https://github.com/wanadev/pontoon-debian/blob/master/debian/pontoon.service>`__
 in the ``debian/`` folder, so you just have to copy it::
 
     cp /opt/pontoon/current/debian/pontoon.service /etc/systemd/system/
