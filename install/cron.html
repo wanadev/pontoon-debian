@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Automatic Synchronization (cron) &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
+  <title>Scheduled Tasks (cron) &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -46,7 +46,11 @@
 <li class="toctree-l2"><a class="reference internal" href="requirements.html">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="postgresql.html">PostgreSQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon.html">Pontoon</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Automatic Synchronization (cron)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Scheduled Tasks (cron)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-synchronization">Automatic Synchronization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-scheduled-tasks">Other scheduled tasks</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="systemd.html">Startup Configuration (systemd)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nginx.html">Nginx</a></li>
 </ul>
@@ -73,7 +77,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Installing Pontoon on Debian and Ubuntu</a> &raquo;</li>
-      <li>Automatic Synchronization (cron)</li>
+      <li>Scheduled Tasks (cron)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/install/cron.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,10 +87,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="automatic-synchronization-cron">
-<h1>Automatic Synchronization (cron)<a class="headerlink" href="#automatic-synchronization-cron" title="Permalink to this heading"></a></h1>
-<p>To enable automatic synchronization, we will use cron.</p>
-<p>To configure this, first, login as <code class="docutils literal notranslate"><span class="pre">pontoon</span></code>:</p>
+  <section id="scheduled-tasks-cron">
+<h1>Scheduled Tasks (cron)<a class="headerlink" href="#scheduled-tasks-cron" title="Permalink to this heading"></a></h1>
+<p>Tu automatically run scheduled tasks we will use cron.</p>
+<p>To configure them, first, login as <code class="docutils literal notranslate"><span class="pre">pontoon</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">pontoon</span>
 </pre></div>
 </div>
@@ -94,20 +98,47 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">crontab</span> <span class="o">-</span><span class="n">e</span>
 </pre></div>
 </div>
-<p>You just have to call the <a class="reference external" href="https://github.com/wanadev/pontoon-debian/blob/master/debian/sync-projects.sh">debian/sync-projects.sh</a>
-script at the desired interval. For example, you can add the following line to
-run the synchronization every hour:</p>
+<p>Once done, you can leave from the <code class="docutils literal notranslate"><span class="pre">pontoon</span></code> shell using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
+<section id="automatic-synchronization">
+<h2>Automatic Synchronization<a class="headerlink" href="#automatic-synchronization" title="Permalink to this heading"></a></h2>
+<p>To enable automatic synchronization you just have to call the <a class="reference external" href="https://github.com/wanadev/pontoon-debian/blob/master/debian/sync-projects.sh">debian/sync-projects.sh</a>
+script at the desired interval.</p>
+<p>For example, you can add the following line to run the synchronization every
+hour:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pontoon</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">sync</span><span class="o">-</span><span class="n">projects</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <p>For more information, read <a class="reference external" href="https://www.man7.org/linux/man-pages/man5/crontab.5.html">the crontab documentation</a>.</p>
-<p>Once done, you can leave from the <code class="docutils literal notranslate"><span class="pre">pontoon</span></code> shell using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you installed Pontoon in at a custom location or if your <em>virtualenv</em> is
 not named <code class="docutils literal notranslate"><span class="pre">__env__</span></code>, you will have to modify the <a class="reference external" href="https://github.com/wanadev/pontoon-debian/blob/master/debian/sync-projects.sh">debian/sync-project.sh</a>
 script.</p>
 </div>
+</section>
+<section id="other-scheduled-tasks">
+<h2>Other scheduled tasks<a class="headerlink" href="#other-scheduled-tasks" title="Permalink to this heading"></a></h2>
+<p>You can also fetch other tasks mentioned on the <a class="reference external" href="https://mozilla-pontoon.readthedocs.io/en/latest/admin/deployment.html#scheduled-jobs">Pontoon documentation</a>.
+A script is provided for each tasks:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">debian/clear-old-sync-logs.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debian/clear-sessions.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debian/collect-insights.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debian/send-deadline-notifications.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debian/send-review-notifications.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debian/send-suggestion-notifications.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debian/warmup-cache.sh</span></code></p></li>
+</ul>
+<p>For example, to have insights be fetched at the start of each day:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">6</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pontoon</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">collect</span><span class="o">-</span><span class="n">insights</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you installed Pontoon in at a custom location or if your <em>virtualenv</em> is
+not named <code class="docutils literal notranslate"><span class="pre">__env__</span></code>, you will have to modify the scripts!</p>
+</div>
+</section>
 </section>
 
 

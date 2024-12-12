@@ -1,5 +1,5 @@
 Requirements
-------------
+============
 
 To install Pontoon, you will need:
 
