@@ -4,7 +4,7 @@ Nginx
 Pontoon runs using a Python WSGI HTTP server named `Gunicorn
 <https://gunicorn.org/>`_. This server is not designed to deal with slow
 clients, so `it needs a proxy server
-<https://docs.gunicorn.org/en/latest/deploy.html>`_ to buffer them. We will see
+<https://docs.gunicorn.org/en/latest/deploy.html>`__ to buffer them. We will see
 in this section how to install and configure Nginx as proxy server for Pontoon.
 
 
@@ -25,7 +25,7 @@ To install Nginx, simply run the following command::
 Configuring a Nginx Vhost For Pontoon
 -------------------------------------
 
-We provide a sample Nginx *vhost* in `debian/pontoon.nginx.conf <https://github.com/wanadev/pontoon-debian/blob/master/debian/pontoon.nginx.conf>`_, so we will start by copying it to the Nginx folder::
+We provide a sample Nginx *vhost* in `debian/pontoon.nginx.conf <https://github.com/wanadev/pontoon-debian/blob/master/debian/pontoon.nginx.conf>`__, so we will start by copying it to the Nginx folder::
 
     cp /opt/pontoon/current/debian/pontoon.nginx.conf /etc/nginx/sites-available/
 
@@ -45,8 +45,8 @@ Now you should edit that file to configure at least the server name and the path
 
     }
 
-You can show the complete file `on Github
-<https://github.com/wanadev/pontoon-debian/blob/master/debian/pontoon.nginx.conf>`_.
+You can show the complete file `on GitHub
+<https://github.com/wanadev/pontoon-debian/blob/master/debian/pontoon.nginx.conf>`__.
 
 Once configured, you just have to enable the *vhost* by creating a symbolic
 link::

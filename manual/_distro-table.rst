@@ -10,7 +10,9 @@
 
 .. WARNING::
 
-   Ubuntu 20.04 LTS (focal) and Debian 11 (bullseyes) are not supported anymore. Minimal requirements for Pontoon are now Python 3.10 and PostgreSQL 14.
+   Ubuntu 20.04 LTS (focal) and Debian 11 (bullseyes) are not supported
+   anymore. Minimal requirements for Pontoon are now Python 3.10 and PostgreSQL
+   14.
 
 .. NOTE::
 

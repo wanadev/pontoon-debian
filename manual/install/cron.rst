@@ -12,14 +12,14 @@ then edit the cron configuration using the following command::
     crontab -e
 
 You just have to call the `debian/sync-projects.sh
-<https://github.com/wanadev/pontoon-debian/blob/master/debian/sync-projects.sh>`_
+<https://github.com/wanadev/pontoon-debian/blob/master/debian/sync-projects.sh>`__
 script at the desired interval. For example, you can add the following line to
 run the synchronization every hour::
 
     0 * * * * /opt/pontoon/current/debian/sync-projects.sh
 
 For more information, read `the crontab documentation
-<https://www.man7.org/linux/man-pages/man5/crontab.5.html>`_.
+<https://www.man7.org/linux/man-pages/man5/crontab.5.html>`__.
 
 Once done, you can leave from the ``pontoon`` shell using the ``exit`` command.
 
