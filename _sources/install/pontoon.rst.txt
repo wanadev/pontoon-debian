@@ -281,6 +281,8 @@ Once this is done, just run the following command to populate the database::
     python manage.py migrate
 
 
+.. _create_django_admin_user:
+
 Creating the Initial Administrator User
 ---------------------------------------
 
