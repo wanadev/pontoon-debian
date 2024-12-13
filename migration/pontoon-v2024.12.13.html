@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pontoon Debian v2024.12.13 &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pontoon Debian v2024.01.16" href="pontoon-v2024.01.16.html" />
+    <link rel="prev" title="Migration Guide" href="migration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Pontoon Debian Administrator's Manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../foreword.html">Foreword</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-tarball.html">Getting Pontoon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installing Pontoon on Debian and Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backup.html">Backuping and Restoring Pontoon</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Updating Pontoon</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="migration.html">Migration Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pontoon Debian v2024.12.13</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#release-details">Release Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#migration-instructions">Migration Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changelog">Changelog</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#breaking-changes">⚠️ Breaking changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#important-changes">Important changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#all-changes">All changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2024.01.16.html">Pontoon Debian v2024.01.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2023.11.06.html">Pontoon Debian v2023.11.06</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2023.08.16.html">Pontoon Debian v2023.08.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2023.05.02.html">Pontoon Debian v2023.05.02</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2023.02.14.html">Pontoon Debian v2023.02.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.09.12.html">Pontoon Debian v2022.09.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.06.27.html">Pontoon Debian v2022.06.27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.04.26.html">Pontoon Debian v2022.04.26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.02.09.html">Pontoon Debian v2022.02.09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.12.06.html">Pontoon Debian v2021.12.06</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.09.23.html">Pontoon Debian v2021.09.23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.03.23.html">Pontoon Debian v2021.03.23</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pontoon Debian Administrator's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Updating Pontoon</a> &raquo;</li>
+      <li>Pontoon Debian v2024.12.13</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/migration/pontoon-v2024.12.13.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pontoon-debian-v2024-12-13">
+<h1>Pontoon Debian v2024.12.13<a class="headerlink" href="#pontoon-debian-v2024-12-13" title="Permalink to this heading"></a></h1>
+<section id="release-details">
+<h2>Release Details<a class="headerlink" href="#release-details" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Migration from: <a class="reference internal" href="pontoon-v2024.01.16.html"><span class="doc">Pontoon Debian v2024.01.16</span></a></p></li>
+<li><p>Built from commit: <a class="reference external" href="https://github.com/mozilla/pontoon/commit/5e90a8ac1ed8b5b6915156cf868534988b650cb3">5e90a8ac1ed8b5b6915156cf868534988b650cb3</a></p></li>
+<li><p>Tarball URL: <a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases/download/v2024.12.13.0/pontoon_2024.12.13.0.tar.gz">https://github.com/wanadev/pontoon-debian/releases/download/v2024.12.13.0/pontoon_2024.12.13.0.tar.gz</a></p></li>
+</ul>
+</section>
+<section id="migration-instructions">
+<h2>Migration Instructions<a class="headerlink" href="#migration-instructions" title="Permalink to this heading"></a></h2>
+<p>There is no specific migration instruction, just follow the <a class="reference internal" href="migration.html"><span class="doc">Migration Guide</span></a>.</p>
+</section>
+<section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading"></a></h2>
+<section id="breaking-changes">
+<h3>⚠️ Breaking changes<a class="headerlink" href="#breaking-changes" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Minimal Python version is now Python 3.10 (Python 11 recommended)</p></li>
+<li><p>Minimal PostgreSQL version is now PostgreSQL 14 (PostgreSQL 15 recommended)</p></li>
+<li><p>Debian 11 support was dropped. If you are still on Debian 11, ugrade it to
+Debian 12 BEFORE upgrading Pontoon.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">ENABLE_INSIGHT_TAB</span></code> setting was renamed to <code class="docutils literal notranslate"><span class="pre">ENABLE_INSIGHT</span></code></p></li>
+</ul>
+</section>
+<section id="important-changes">
+<h3>Important changes<a class="headerlink" href="#important-changes" title="Permalink to this heading"></a></h3>
+<p>Python 3.12 and Ubuntu 24.04 are now supported.</p>
+<p>The Pontoon dev team added a lot of new features and so there are a lot of new settings:</p>
+<ul>
+<li><p>Pontoon Settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enables logging to a file. This is useful for retaining log</span>
+<span class="c1"># data for later analysis or troubleshooting.</span>
+<span class="n">LOG_TO_FILE</span><span class="o">=</span><span class="kc">False</span>
+</pre></div>
+</div>
+</li>
+<li><p>Badges &amp; Achievements Settings (new section):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifies the start date from which user activities count towards badge</span>
+<span class="c1"># achievements.  This variable should be in YYYY-MM-DD format.</span>
+<span class="n">BADGES_START_DATE</span><span class="o">=</span><span class="s2">&quot;1970-01-01&quot;</span>
+
+<span class="c1"># A comma-separated list of numeric thresholds for different levels of the</span>
+<span class="c1"># Translation Champion badge.</span>
+<span class="n">BADGES_TRANSLATION_THRESHOLDS</span><span class="o">=</span><span class="s2">&quot;5, 50, 250, 1000&quot;</span>
+
+<span class="c1"># A comma-separated list of numeric thresholds for different levels of the</span>
+<span class="c1"># Review Master badge.</span>
+<span class="n">BADGES_REVIEW_THRESHOLDS</span><span class="o">=</span><span class="s2">&quot;5, 50, 250, 1000&quot;</span>
+
+<span class="c1"># A comma-separated list of numeric thresholds for different levels of the</span>
+<span class="c1"># Community Builder badge.</span>
+<span class="n">BADGES_PROMOTION_THRESHOLDS</span><span class="o">=</span><span class="s2">&quot;1, 2, 5&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Email Consent &amp; Communications Settings (new section):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enables Email consent page</span>
+<span class="n">EMAIL_CONSENT_ENABLED</span><span class="o">=</span><span class="kc">False</span>
+
+<span class="c1"># Title of the Email consent page (mandatory when email consent is enabled)</span>
+<span class="n">EMAIL_CONSENT_TITLE</span><span class="o">=</span>
+
+<span class="c1"># Main text of the Email consent page. You can use that to explain what type of</span>
+<span class="c1"># communication to expect among other things. (mandatory when email consent is</span>
+<span class="c1"># enabled)</span>
+<span class="n">EMAIL_CONSENT_MAIN_TEXT</span><span class="o">=</span>
+
+<span class="c1"># Privacy notice on the Email consent page. It&#39;s possible to use HTML and link</span>
+<span class="c1"># to external privacy notice page</span>
+<span class="n">EMAIL_CONSENT_PRIVACY_NOTICE</span><span class="o">=</span>
+
+<span class="c1"># Help text to use under the Email communications checkbox in user settings.</span>
+<span class="c1"># It allows to explain what type of communication to expect and to link to</span>
+<span class="c1"># deployment-specific privacy notices among other things (optional).</span>
+<span class="n">EMAIL_COMMUNICATIONS_HELP_TEXT</span><span class="o">=</span>
+
+<span class="c1"># Text to be shown in the footer of the non-transactional emails sent using the</span>
+<span class="c1"># Messaging Center, just above the unsubscribe text (optional)</span>
+<span class="n">EMAIL_COMMUNICATIONS_FOOTER_PRE_TEXT</span><span class="o">=</span>
+
+<span class="c1"># Custom text to be shown in the Monthly activity summary emails after the</span>
+<span class="c1"># greeting and before the stats (optional)</span>
+<span class="n">EMAIL_MONTHLY_ACTIVITY_SUMMARY_INTRO</span><span class="o">=</span>
+
+<span class="c1"># Integer representing a day of the month on which the Monthly activity summary</span>
+<span class="c1"># emails will be sent. 1 represents the first day of the month.</span>
+<span class="n">MONTHLY_ACTIVITY_SUMMARY_DAY</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="c1"># Integer representing a day of the week on which the weekly notification digest</span>
+<span class="c1"># email will be sent. 0 represents Monday, 6 represents Sunday.</span>
+<span class="n">NOTIFICATION_DIGEST_DAY</span><span class="o">=</span><span class="mi">4</span>  <span class="c1"># Friday</span>
+</pre></div>
+</div>
+</li>
+<li><p>Email SMTP Settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use implicit TLS for the SMTP connection</span>
+<span class="n">EMAIL_USE_SSL</span><span class="o">=</span><span class="kc">False</span>
+</pre></div>
+</div>
+<p>NOTE: The <code class="docutils literal notranslate"><span class="pre">EMAIL_USE_TLS</span></code> setting still exists for explicit TLS connection.</p>
+</li>
+<li><p>Terminology Files (.tbx) (new section):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Title to be used in the header of the Terminology (.TBX) files</span>
+<span class="n">TBX_TITLE</span><span class="o">=</span><span class="s2">&quot;Pontoon Terminology&quot;</span>
+
+<span class="c1"># Description to be used in the header of the Terminology (.TBX) files</span>
+<span class="n">TBX_DESCRIPTION</span><span class="o">=</span><span class="s2">&quot;Terms localized in Pontoon&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Translation APIs Settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Google Cloud AutoML Translation</span>
+<span class="n">GOOGLE_AUTOML_PROJECT_ID</span><span class="o">=</span>
+<span class="n">GOOGLE_AUTOML_WARMUP_INTERVAL</span><span class="o">=</span><span class="mi">300</span>
+
+<span class="c1"># OpenAI AP key to add the ability to refine machine translations using ChatGPT</span>
+<span class="n">OPENAI_API_KEY</span><span class="o">=</span>
+</pre></div>
+</div>
+</li>
+<li><p>Client Filtering &amp; (D)DoS Protection (new section):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A comma-separated list of IP addresses or IP ranges (expressed using the CIDR</span>
+<span class="c1"># notation, e.g. &quot;192.168.1.0/24&quot;) to be blocked from accessing the app, for</span>
+<span class="c1"># example because they are DDoS&#39;ing the server.</span>
+<span class="n">BLOCKED_IPS</span><span class="o">=</span>
+
+<span class="c1"># Optional. Enables traffic throttling based on IP address</span>
+<span class="n">THROTTLE_ENABLED</span><span class="o">=</span><span class="kc">False</span>
+
+<span class="c1"># Maximum number of requests allowed in THROTTLE_OBSERVATION_PERIOD</span>
+<span class="n">THROTTLE_MAX_COUNT</span><span class="o">=</span><span class="mi">300</span>
+
+<span class="c1"># A period (in seconds) in which THROTTLE_MAX_COUNT requests are allowed. If</span>
+<span class="c1"># longer than THROTTLE_BLOCK_DURATION, THROTTLE_BLOCK_DURATION will be used.</span>
+<span class="n">THROTTLE_OBSERVATION_PERIOD</span><span class="o">=</span><span class="mi">60</span>
+
+<span class="c1"># A duration (in seconds) for which IPs are blocked</span>
+<span class="n">THROTTLE_BLOCK_DURATION</span><span class="o">=</span><span class="mi">600</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="all-changes">
+<h3>All changes<a class="headerlink" href="#all-changes" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/mozilla/pontoon/compare/42a5285abddad3c3fd79ae3b4b1a7c309308b61a...5e90a8ac1ed8b5b6915156cf868534988b650cb3">https://github.com/mozilla/pontoon/compare/42a5285abddad3c3fd79ae3b4b1a7c309308b61a…5e90a8ac1ed8b5b6915156cf868534988b650cb3</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="migration.html" class="btn btn-neutral float-left" title="Migration Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pontoon-v2024.01.16.html" class="btn btn-neutral float-right" title="Pontoon Debian v2024.01.16" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Wanadev.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
