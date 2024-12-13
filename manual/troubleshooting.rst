@@ -68,3 +68,29 @@ Where:
 
 * ``pontoondb`` is the name of the database,
 * ``pontoonuser`` is the name of the user.
+
+
+Error 500 with "Invalid HTTP_HOST header" error in the logs
+-----------------------------------------------------------
+
+After migrating to Pontoon Debian v2024.12.13 you may encounter an HTTP 500 error with the following (very long) stacktrace in the logs::
+
+    Invalid HTTP_HOST header: 'pontoon.example.com'. You may need to add 'pontoon.example.com' to ALLOWED_HOSTS.
+    Traceback (most recent call last):
+      File "/opt/pontoon/pontoon-2024.12.13.0/__env__/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+        response = get_response(request)
+                   ^^^^^^^^^^^^^^^^^^^^^
+    [...]
+        csrf_secret = self._get_secret(request)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/opt/pontoon/pontoon-2024.12.13.0/__env__/lib/python3.11/site-packages/django/middleware/csrf.py", line 238, in _get_secret
+        raise ImproperlyConfigured(
+    django.core.exceptions.ImproperlyConfigured: CSRF_USE_SESSIONS is enabled, but request.session is not set. SessionMiddleware must appear before CsrfViewMiddleware in MIDDLEWARE.
+
+To fix this, just add your domain to allowed hosts in ``/etc/opt/pontoon.env``::
+
+    ALLOWED_HOSTS="127.0.0.1,localhost,pontoon.example.com"
+
+And then restart the Pontoon service::
+
+    systemctl restart pontoon
