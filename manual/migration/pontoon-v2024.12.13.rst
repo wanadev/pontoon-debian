@@ -25,7 +25,7 @@ Changelog
 * Minimal PostgreSQL version is now PostgreSQL 14 (PostgreSQL 15 recommended)
 * Debian 11 support was dropped. If you are still on Debian 11, ugrade it to
   Debian 12 BEFORE upgrading Pontoon.
-* The ``ENABLE_INSIGHT_TAB`` setting was renamed to ``ENABLE_INSIGHT``
+* The ``ENABLE_INSIGHT_TAB`` setting was renamed to ``ENABLE_INSIGHTS``
 
 
 Important changes
