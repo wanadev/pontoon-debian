@@ -8,3 +8,6 @@
 
 # Python 3.10 additional dependency for anyio
 exceptiongroup==1.2.2
+
+# Python 3.10 additional dependency for moz-l10n
+tomli==1.1.0
