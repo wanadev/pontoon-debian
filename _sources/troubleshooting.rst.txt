@@ -94,3 +94,27 @@ To fix this, just add your domain to allowed hosts in ``/etc/opt/pontoon.env``::
 And then restart the Pontoon service::
 
     systemctl restart pontoon
+
+
+pontoon.sync.repositories.utils.PullFromRepositoryException
+-----------------------------------------------------------
+
+If you are not able to sync repositories and you find errors like this one in the logs::
+
+    Host key verification failed.
+    fatal: Could not read from remote repository.
+    Please make sure you have the correct access rights
+    and the repository exists.
+    Traceback (most recent call last):
+        [...]
+      File "/opt/pontoon/current/pontoon/sync/repositories/git.py", line 32, in update
+        raise PullFromRepositoryException(error)
+    pontoon.sync.repositories.utils.PullFromRepositoryException: Cloning into '/opt/pontoon/current/media/[...]'...
+
+* Check the user used by Pontoon have access to the Git repository in your forge (GitLab, GitHub,...). It needs both read and write permission on the repo.
+* If it is the first time you sync a repository on this server, be sure the remote server is in the SSH known host::
+
+        su pontoon
+        ssh -i ~/.ssh/id_ed25519 git@git.example.org
+
+  and answer ``yes`` to the question.

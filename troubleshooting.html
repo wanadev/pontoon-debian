@@ -51,6 +51,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#missing-distutils-module-when-running-manage-py-commands">Missing “distutils” module when running “manage.py” commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#permission-issue-on-database-migration-psycopg2-permission-denied">Permission issue on database migration (psycopg2 permission denied)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#error-500-with-invalid-http-host-header-error-in-the-logs">Error 500 with “Invalid HTTP_HOST header” error in the logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pontoon-sync-repositories-utils-pullfromrepositoryexception">pontoon.sync.repositories.utils.PullFromRepositoryException</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
@@ -170,6 +171,31 @@ supported:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">restart</span> <span class="n">pontoon</span>
 </pre></div>
 </div>
+</section>
+<section id="pontoon-sync-repositories-utils-pullfromrepositoryexception">
+<h2>pontoon.sync.repositories.utils.PullFromRepositoryException<a class="headerlink" href="#pontoon-sync-repositories-utils-pullfromrepositoryexception" title="Permalink to this heading"></a></h2>
+<p>If you are not able to sync repositories and you find errors like this one in the logs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">key</span> <span class="n">verification</span> <span class="n">failed</span><span class="o">.</span>
+<span class="n">fatal</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="n">read</span> <span class="kn">from</span> <span class="nn">remote</span> <span class="n">repository</span><span class="o">.</span>
+<span class="n">Please</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">have</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">access</span> <span class="n">rights</span>
+<span class="ow">and</span> <span class="n">the</span> <span class="n">repository</span> <span class="n">exists</span><span class="o">.</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+  <span class="n">File</span> <span class="s2">&quot;/opt/pontoon/current/pontoon/sync/repositories/git.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">32</span><span class="p">,</span> <span class="ow">in</span> <span class="n">update</span>
+    <span class="k">raise</span> <span class="n">PullFromRepositoryException</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+<span class="n">pontoon</span><span class="o">.</span><span class="n">sync</span><span class="o">.</span><span class="n">repositories</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">PullFromRepositoryException</span><span class="p">:</span> <span class="n">Cloning</span> <span class="n">into</span> <span class="s1">&#39;/opt/pontoon/current/media/[...]&#39;</span><span class="o">...</span>
+</pre></div>
+</div>
+<ul>
+<li><p>Check the user used by Pontoon have access to the Git repository in your forge (GitLab, GitHub,…). It needs both read and write permission on the repo.</p></li>
+<li><p>If it is the first time you sync a repository on this server, be sure the remote server is in the SSH known host:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">pontoon</span>
+<span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span> <span class="n">git</span><span class="nd">@git</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
+</pre></div>
+</div>
+<p>and answer <code class="docutils literal notranslate"><span class="pre">yes</span></code> to the question.</p>
+</li>
+</ul>
 </section>
 </section>
 
