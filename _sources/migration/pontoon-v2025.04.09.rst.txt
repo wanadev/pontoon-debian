@@ -22,7 +22,9 @@ Then you can follow the standard :doc:`./migration` instructions.
 
 .. WARNING::
 
-   **Database migration:** The ``sync.0004_migrate_sync_events`` step of the database migration may take A LOT of time if you have many sync events in your database. On our own (relatively small) instances, it took hours to run!
+   **Database migration:** The ``sync.0004_migrate_sync_events`` step of the database migration may take A LOT of time if you have many sync events in your database. Please also note that it may require a lot more RAM during the migration than Pontoon needs when it is running.
+
+   On our own (relatively small) instances, it took a couple of hours and required 2 GB of RAM along to 4 GB of swap to complete!
 
 
 Changelog
