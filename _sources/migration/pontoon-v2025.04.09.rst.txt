@@ -20,6 +20,10 @@ variable to your ``pontoon.env`` config before migrating::
 
 Then you can follow the standard :doc:`./migration` instructions.
 
+.. WARNING::
+
+   **Database migration:** The ``sync.0004_migrate_sync_events`` step of the database migration may take A LOT of time if you have many sync events in your database. On our own (relatively small) instances, it took hours to run!
+
 
 Changelog
 ---------

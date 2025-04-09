@@ -121,6 +121,10 @@ variable to your <code class="docutils literal notranslate"><span class="pre">po
 </pre></div>
 </div>
 <p>Then you can follow the standard <a class="reference internal" href="migration.html"><span class="doc">Migration Guide</span></a> instructions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Database migration:</strong> The <code class="docutils literal notranslate"><span class="pre">sync.0004_migrate_sync_events</span></code> step of the database migration may take A LOT of time if you have many sync events in your database. On our own (relatively small) instances, it took hours to run!</p>
+</div>
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading"></a></h2>
