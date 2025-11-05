@@ -8,6 +8,10 @@
 | Ubuntu 24.04 LTS (noble) | 3.12   | 16         | → 2029-04                   |
 +--------------------------+--------+------------+-----------------------------+
 
+.. NOTE::
+
+   Debian 13 (trixie) is not supported yet: the ``psycopg`` version currently used by Pontoon cannot be built for Python 3.13.
+
 .. WARNING::
 
    Ubuntu 20.04 LTS (focal) and Debian 11 (bullseyes) are not supported
