@@ -1,21 +1,21 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pontoon &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -28,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Pontoon Debian Administrator's Manual
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Pontoon Debian Administrator's Manual
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -89,9 +93,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Installing Pontoon on Debian and Ubuntu</a> &raquo;</li>
-      <li>Pontoon</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Installing Pontoon on Debian and Ubuntu</a></li>
+      <li class="breadcrumb-item active">Pontoon</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/install/pontoon.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -102,7 +106,7 @@
            <div itemprop="articleBody">
              
   <section id="pontoon">
-<h1>Pontoon<a class="headerlink" href="#pontoon" title="Permalink to this heading"></a></h1>
+<h1>Pontoon<a class="headerlink" href="#pontoon" title="Link to this heading"></a></h1>
 <p>In this section we will see how to install and configure Pontoon. The main
 paths and users involved in the installation are:</p>
 <ul class="simple">
@@ -117,9 +121,9 @@ installed with all its dependencies self-contained in a <em>virtualenv</em>.</p>
 this manual and the sample configurations provided with it assume they are left
 unchanged.</p>
 <section id="installing-pontoon">
-<h2>Installing Pontoon<a class="headerlink" href="#installing-pontoon" title="Permalink to this heading"></a></h2>
+<h2>Installing Pontoon<a class="headerlink" href="#installing-pontoon" title="Link to this heading"></a></h2>
 <section id="system-preparation">
-<h3>System Preparation<a class="headerlink" href="#system-preparation" title="Permalink to this heading"></a></h3>
+<h3>System Preparation<a class="headerlink" href="#system-preparation" title="Link to this heading"></a></h3>
 <p>First we have to create the <code class="docutils literal notranslate"><span class="pre">pontoon</span></code> user that will be used to run Pontoon:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">useradd</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">m</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pontoon</span> <span class="n">pontoon</span>
 </pre></div>
@@ -136,7 +140,7 @@ installation and go into it:</p>
 </div>
 </section>
 <section id="downloading-and-extracting-pontoon">
-<h3>Downloading and Extracting Pontoon<a class="headerlink" href="#downloading-and-extracting-pontoon" title="Permalink to this heading"></a></h3>
+<h3>Downloading and Extracting Pontoon<a class="headerlink" href="#downloading-and-extracting-pontoon" title="Link to this heading"></a></h3>
 <p>Now we can download the latest version of the Pontoon Debian’s releases (you
 can, of course, use your own builds here). You will find the releases on Github:</p>
 <ul class="simple">
@@ -159,7 +163,7 @@ version:</p>
 </div>
 </section>
 <section id="virtualenv-creation-and-activation">
-<h3>Virtualenv Creation and Activation<a class="headerlink" href="#virtualenv-creation-and-activation" title="Permalink to this heading"></a></h3>
+<h3>Virtualenv Creation and Activation<a class="headerlink" href="#virtualenv-creation-and-activation" title="Link to this heading"></a></h3>
 <p>Now we will create the <em>virtualenv</em> where all Pontoon’s dependencies will be
 installed.</p>
 <p>First we go in the Pontoon’s installation directory:</p>
@@ -191,7 +195,7 @@ You will be able to activate it again with the <code class="docutils literal not
 </div>
 </section>
 <section id="installing-pontoon-s-dependencies">
-<h3>Installing Pontoon’s Dependencies<a class="headerlink" href="#installing-pontoon-s-dependencies" title="Permalink to this heading"></a></h3>
+<h3>Installing Pontoon’s Dependencies<a class="headerlink" href="#installing-pontoon-s-dependencies" title="Link to this heading"></a></h3>
 <p>To install the dependencies, you should run the following commands from within
 the <em>virtualenv</em> (see above).</p>
 <p>First we will <strong>update pip</strong>, the Python’s package manager (with an older <em>pip</em>
@@ -216,7 +220,7 @@ virtualenv:</p>
 </div>
 </section>
 <section id="temporary-fix-the-media-folder">
-<h3>Temporary Fix: The “media” Folder<a class="headerlink" href="#temporary-fix-the-media-folder" title="Permalink to this heading"></a></h3>
+<h3>Temporary Fix: The “media” Folder<a class="headerlink" href="#temporary-fix-the-media-folder" title="Link to this heading"></a></h3>
 <p>Despite a configurable path for the media folder, Pontoon currently stores its
 data in a <code class="docutils literal notranslate"><span class="pre">media/</span></code> folder next to its <code class="docutils literal notranslate"><span class="pre">pontoon/</span></code> folder. To avoid having
 data in the <code class="docutils literal notranslate"><span class="pre">/opt</span></code> directory, we will make a symbolic link to store the data
@@ -231,7 +235,7 @@ in <code class="docutils literal notranslate"><span class="pre">/var</span></cod
 </section>
 </section>
 <section id="configuring-pontoon">
-<h2>Configuring Pontoon<a class="headerlink" href="#configuring-pontoon" title="Permalink to this heading"></a></h2>
+<h2>Configuring Pontoon<a class="headerlink" href="#configuring-pontoon" title="Link to this heading"></a></h2>
 <p>Now that Pontoon is installed, we will configure it.</p>
 <p>We made a sample configuration file that is available in the <code class="docutils literal notranslate"><span class="pre">debian/</span></code>
 folder. You can copy it into the <code class="docutils literal notranslate"><span class="pre">/etc/opt</span></code> folder with the following
@@ -240,7 +244,7 @@ command:</p>
 </pre></div>
 </div>
 <section id="minimal-configuration">
-<h3>Minimal Configuration<a class="headerlink" href="#minimal-configuration" title="Permalink to this heading"></a></h3>
+<h3>Minimal Configuration<a class="headerlink" href="#minimal-configuration" title="Link to this heading"></a></h3>
 <p>To allow Pontoon to run, you will have to configure at least the following
 settings:</p>
 <ul>
@@ -275,7 +279,7 @@ database. It is composed as follow:</p>
 </ul>
 </section>
 <section id="git-ssh-configuration">
-<h3>Git SSH Configuration<a class="headerlink" href="#git-ssh-configuration" title="Permalink to this heading"></a></h3>
+<h3>Git SSH Configuration<a class="headerlink" href="#git-ssh-configuration" title="Link to this heading"></a></h3>
 <p>If you are using Git, you will have to create and configure an SSH key to allow
 Pontoon to <code class="docutils literal notranslate"><span class="pre">clone</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> to your repositories.</p>
 <p>We will proceed with the following steps:</p>
@@ -329,7 +333,7 @@ not well configured on the user.</p>
 <p>You can now leave from the <code class="docutils literal notranslate"><span class="pre">pontoon</span></code> using the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
 </section>
 <section id="other-configurations">
-<h3>Other Configurations<a class="headerlink" href="#other-configurations" title="Permalink to this heading"></a></h3>
+<h3>Other Configurations<a class="headerlink" href="#other-configurations" title="Link to this heading"></a></h3>
 <p>There are a lot of other configurations you will want to set. You will find
 them all in the sample configuration file:</p>
 <ul class="simple">
@@ -346,7 +350,7 @@ them all in the sample configuration file:</p>
 </section>
 </section>
 <section id="populating-the-database">
-<h2>Populating the Database<a class="headerlink" href="#populating-the-database" title="Permalink to this heading"></a></h2>
+<h2>Populating the Database<a class="headerlink" href="#populating-the-database" title="Link to this heading"></a></h2>
 <p>We can now populate the database with Pontoon’s tables and data.</p>
 <p>To populate the database, you should be in the Pontoon’s installation folder
 (<code class="docutils literal notranslate"><span class="pre">/opt/pontoon/current</span></code>) and have its <em>virtualenv</em> activated. This can be
@@ -365,7 +369,7 @@ to the Pontoon’s configuration:</p>
 </div>
 </section>
 <section id="creating-the-initial-administrator-user">
-<span id="create-django-admin-user"></span><h2>Creating the Initial Administrator User<a class="headerlink" href="#creating-the-initial-administrator-user" title="Permalink to this heading"></a></h2>
+<span id="create-django-admin-user"></span><h2>Creating the Initial Administrator User<a class="headerlink" href="#creating-the-initial-administrator-user" title="Link to this heading"></a></h2>
 <p>Now that the database is ready, we can create the first administrator user.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

@@ -1,21 +1,21 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Getting Pontoon &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Pontoon Debian Administrator's Manual
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Pontoon Debian Administrator's Manual
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -68,8 +72,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Getting Pontoon</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting Pontoon</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/release-tarball.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -80,14 +84,14 @@
            <div itemprop="articleBody">
              
   <section id="getting-pontoon">
-<h1>Getting Pontoon<a class="headerlink" href="#getting-pontoon" title="Permalink to this heading"></a></h1>
+<h1>Getting Pontoon<a class="headerlink" href="#getting-pontoon" title="Link to this heading"></a></h1>
 <p>We provide both:</p>
 <ul class="simple">
 <li><p>Prebuilt Pontoon tarball releases,</p></li>
 <li><p>and scripts to build your own Pontoon releases.</p></li>
 </ul>
 <section id="prebuilt-pontoon-debian-tarball">
-<h2>Prebuilt Pontoon Debian Tarball<a class="headerlink" href="#prebuilt-pontoon-debian-tarball" title="Permalink to this heading"></a></h2>
+<h2>Prebuilt Pontoon Debian Tarball<a class="headerlink" href="#prebuilt-pontoon-debian-tarball" title="Link to this heading"></a></h2>
 <p>The simplest way to get Pontoon is to download the prebuilt tarballs.</p>
 <p>We have two types of prebuilt tarball releases:</p>
 <ul class="simple">
@@ -111,7 +115,7 @@
 </div>
 </section>
 <section id="building-pontoon-debian-tarball">
-<h2>Building Pontoon Debian Tarball<a class="headerlink" href="#building-pontoon-debian-tarball" title="Permalink to this heading"></a></h2>
+<h2>Building Pontoon Debian Tarball<a class="headerlink" href="#building-pontoon-debian-tarball" title="Link to this heading"></a></h2>
 <p>Requirements:</p>
 <ul class="simple">
 <li><p>Debian 12 or Ubuntu 24.04 (Ubuntu 22.04 will also work but only with an updated Node.js version)</p></li>
@@ -145,7 +149,7 @@ repository (e.g. <code class="docutils literal notranslate"><span class="pre">ma
 <p>The output goes to <code class="docutils literal notranslate"><span class="pre">dist/pontoon_&lt;VERSION&gt;.tar.gz</span></code>.</p>
 </section>
 <section id="building-pontoon-debian-tarball-using-docker">
-<h2>Building Pontoon Debian Tarball using Docker<a class="headerlink" href="#building-pontoon-debian-tarball-using-docker" title="Permalink to this heading"></a></h2>
+<h2>Building Pontoon Debian Tarball using Docker<a class="headerlink" href="#building-pontoon-debian-tarball-using-docker" title="Link to this heading"></a></h2>
 <p>You can build the Pontoon Debian tarball from the <strong>latest commit of Pontoon’s
 main branch</strong> using Docker. To do so, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">make</span><span class="o">-</span><span class="n">pontoon</span><span class="o">-</span><span class="n">tarball</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">sh</span>

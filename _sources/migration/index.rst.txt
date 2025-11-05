@@ -6,6 +6,7 @@ Updating Pontoon
    :caption: Contents:
 
    ./migration.rst
+   ./pontoon-v2025.11.05.rst
    ./pontoon-v2025.04.09.rst
    ./pontoon-v2024.12.13.rst
    ./pontoon-v2024.01.16.rst

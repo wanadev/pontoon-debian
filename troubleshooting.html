@@ -1,21 +1,21 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Troubleshooting &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Pontoon Debian Administrator's Manual
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Pontoon Debian Administrator's Manual
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,8 +74,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Troubleshooting</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Troubleshooting</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/troubleshooting.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -82,13 +86,13 @@
            <div itemprop="articleBody">
              
   <section id="troubleshooting">
-<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h1>
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h1>
 <section id="errors-about-unpinned-modules-during-pip-install">
-<h2>Errors about unpinned modules during pip install<a class="headerlink" href="#errors-about-unpinned-modules-during-pip-install" title="Permalink to this heading"></a></h2>
+<h2>Errors about unpinned modules during pip install<a class="headerlink" href="#errors-about-unpinned-modules-during-pip-install" title="Link to this heading"></a></h2>
 <p>When you install Pontoon dependencies using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>,
 you may encounter errors similar to this one:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">In</span> <span class="o">--</span><span class="n">require</span><span class="o">-</span><span class="n">hashes</span> <span class="n">mode</span><span class="p">,</span> <span class="nb">all</span> <span class="n">requirements</span> <span class="n">must</span> <span class="n">have</span> <span class="n">their</span> <span class="n">versions</span> <span class="n">pinned</span> <span class="k">with</span> <span class="o">==.</span> <span class="n">These</span> <span class="n">do</span> <span class="ow">not</span><span class="p">:</span>
-    <span class="n">googleapis</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">protos</span><span class="o">&lt;</span><span class="mf">2.0</span><span class="o">.</span><span class="n">dev0</span><span class="p">,</span><span class="o">&gt;=</span><span class="mf">1.56.2</span> <span class="kn">from</span> <span class="nn">https</span><span class="p">:</span><span class="o">//</span><span class="n">files</span><span class="o">.</span><span class="n">pythonhosted</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">packages</span><span class="o">/</span><span class="n">a0</span><span class="o">/</span><span class="mi">0</span><span class="n">f</span><span class="o">/</span><span class="n">c0713fb2b3d28af4b2fded3291df1c4d4f79a00d15c2374a9e010870016c</span><span class="o">/</span><span class="n">googleapis_common_protos</span><span class="o">-</span><span class="mf">1.66.0</span><span class="o">-</span><span class="n">py2</span><span class="o">.</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">google</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">core</span><span class="p">[</span><span class="n">grpc</span><span class="p">]</span><span class="o">==</span><span class="mf">2.20.0</span><span class="o">-&gt;-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">txt</span> <span class="p">(</span><span class="n">line</span> <span class="mi">369</span><span class="p">))</span>
+    <span class="n">googleapis</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">protos</span><span class="o">&lt;</span><span class="mf">2.0</span><span class="o">.</span><span class="n">dev0</span><span class="p">,</span><span class="o">&gt;=</span><span class="mf">1.56.2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">https</span><span class="p">:</span><span class="o">//</span><span class="n">files</span><span class="o">.</span><span class="n">pythonhosted</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">packages</span><span class="o">/</span><span class="n">a0</span><span class="o">/</span><span class="mi">0</span><span class="n">f</span><span class="o">/</span><span class="n">c0713fb2b3d28af4b2fded3291df1c4d4f79a00d15c2374a9e010870016c</span><span class="o">/</span><span class="n">googleapis_common_protos</span><span class="o">-</span><span class="mf">1.66.0</span><span class="o">-</span><span class="n">py2</span><span class="o">.</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span> <span class="p">(</span><span class="kn">from</span><span class="w"> </span><span class="nn">google</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">core</span><span class="p">[</span><span class="n">grpc</span><span class="p">]</span><span class="o">==</span><span class="mf">2.20.0</span><span class="o">-&gt;-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">txt</span> <span class="p">(</span><span class="n">line</span> <span class="mi">369</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>This can be caused by a not up to date pip. In this case try to update the pip
@@ -110,11 +114,11 @@ supported:</p>
 </ul>
 </section>
 <section id="missing-distutils-module-when-running-manage-py-commands">
-<h2>Missing “distutils” module when running “manage.py” commands<a class="headerlink" href="#missing-distutils-module-when-running-manage-py-commands" title="Permalink to this heading"></a></h2>
+<h2>Missing “distutils” module when running “manage.py” commands<a class="headerlink" href="#missing-distutils-module-when-running-manage-py-commands" title="Link to this heading"></a></h2>
 <p>If you are using Python 3.12 and above, Django may complain about missing <code class="docutils literal notranslate"><span class="pre">distutils</span></code> module when running <code class="docutils literal notranslate"><span class="pre">manage.py</span></code> commands, displaying errors like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
     <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-    <span class="kn">from</span> <span class="nn">distutils.version</span> <span class="kn">import</span> \
+    <span class="kn">from</span><span class="w"> </span><span class="nn">distutils.version</span><span class="w"> </span><span class="kn">import</span> \
 <span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;distutils&#39;</span>
 </pre></div>
 </div>
@@ -124,7 +128,7 @@ supported:</p>
 </div>
 </section>
 <section id="permission-issue-on-database-migration-psycopg2-permission-denied">
-<h2>Permission issue on database migration (psycopg2 permission denied)<a class="headerlink" href="#permission-issue-on-database-migration-psycopg2-permission-denied" title="Permalink to this heading"></a></h2>
+<h2>Permission issue on database migration (psycopg2 permission denied)<a class="headerlink" href="#permission-issue-on-database-migration-psycopg2-permission-denied" title="Link to this heading"></a></h2>
 <p>When running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code> to create or update the database schema, you may encounter the following error:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Operations</span> <span class="n">to</span> <span class="n">perform</span><span class="p">:</span>
   <span class="n">Apply</span> <span class="nb">all</span> <span class="n">migrations</span><span class="p">:</span> <span class="n">account</span><span class="p">,</span> <span class="n">actionlog</span><span class="p">,</span> <span class="n">admin</span><span class="p">,</span> <span class="n">auth</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">checks</span><span class="p">,</span> <span class="n">contenttypes</span><span class="p">,</span> <span class="n">guardian</span><span class="p">,</span> <span class="n">homepage</span><span class="p">,</span> <span class="n">insights</span><span class="p">,</span> <span class="n">messaging</span><span class="p">,</span> <span class="n">notifications</span><span class="p">,</span> <span class="n">sessions</span><span class="p">,</span> <span class="n">sites</span><span class="p">,</span> <span class="n">socialaccount</span><span class="p">,</span> <span class="n">sync</span><span class="p">,</span> <span class="n">tags</span><span class="p">,</span> <span class="n">terminology</span><span class="p">,</span> <span class="n">tour</span><span class="p">,</span> <span class="n">uxactionlog</span>
@@ -138,7 +142,7 @@ supported:</p>
 </pre></div>
 </div>
 <p>Since PostgreSQL 15, granting permissions to an user seems to not be sufficient so you should change the database’s ownership to the user used by Pontoon:</p>
-<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">pontoondb</span><span class="w"> </span><span class="k">OWNER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">pontoonuser</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">pontoondb</span><span class="w"> </span><span class="k">OWNER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">pontoonuser</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Where:</p>
@@ -148,7 +152,7 @@ supported:</p>
 </ul>
 </section>
 <section id="error-500-with-invalid-http-host-header-error-in-the-logs">
-<h2>Error 500 with “Invalid HTTP_HOST header” error in the logs<a class="headerlink" href="#error-500-with-invalid-http-host-header-error-in-the-logs" title="Permalink to this heading"></a></h2>
+<h2>Error 500 with “Invalid HTTP_HOST header” error in the logs<a class="headerlink" href="#error-500-with-invalid-http-host-header-error-in-the-logs" title="Link to this heading"></a></h2>
 <p>After migrating to Pontoon Debian v2024.12.13 you may encounter an HTTP 500 error with the following (very long) stacktrace in the logs:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invalid</span> <span class="n">HTTP_HOST</span> <span class="n">header</span><span class="p">:</span> <span class="s1">&#39;pontoon.example.com&#39;</span><span class="o">.</span> <span class="n">You</span> <span class="n">may</span> <span class="n">need</span> <span class="n">to</span> <span class="n">add</span> <span class="s1">&#39;pontoon.example.com&#39;</span> <span class="n">to</span> <span class="n">ALLOWED_HOSTS</span><span class="o">.</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
@@ -173,10 +177,10 @@ supported:</p>
 </div>
 </section>
 <section id="pontoon-sync-repositories-utils-pullfromrepositoryexception">
-<h2>pontoon.sync.repositories.utils.PullFromRepositoryException<a class="headerlink" href="#pontoon-sync-repositories-utils-pullfromrepositoryexception" title="Permalink to this heading"></a></h2>
+<h2>pontoon.sync.repositories.utils.PullFromRepositoryException<a class="headerlink" href="#pontoon-sync-repositories-utils-pullfromrepositoryexception" title="Link to this heading"></a></h2>
 <p>If you are not able to sync repositories and you find errors like this one in the logs:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">key</span> <span class="n">verification</span> <span class="n">failed</span><span class="o">.</span>
-<span class="n">fatal</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="n">read</span> <span class="kn">from</span> <span class="nn">remote</span> <span class="n">repository</span><span class="o">.</span>
+<span class="n">fatal</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="n">read</span> <span class="kn">from</span><span class="w"> </span><span class="nn">remote</span> <span class="n">repository</span><span class="o">.</span>
 <span class="n">Please</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">have</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">access</span> <span class="n">rights</span>
 <span class="ow">and</span> <span class="n">the</span> <span class="n">repository</span> <span class="n">exists</span><span class="o">.</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
