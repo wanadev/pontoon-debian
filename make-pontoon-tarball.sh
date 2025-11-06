@@ -95,6 +95,12 @@ cp -v CONTRIBUTING.rst $OUTPUT_DIR
 cp -v CODE_OF_CONDUCT.md $OUTPUT_DIR
 cp -vr $DEBIAN_DIR $OUTPUT_DIR
 
+# Apply patches
+for patch_file in $(find $DEBIAN_DIR -iname "*.patch" | sort) ; do
+    echo "Applying patch $patch_file..."
+    patch --strip=1 -ruN -d $OUTPUT_DIR < $patch_file
+done
+
 echo "[pontoon-debian]" >> $OUTPUT_DIR/RELEASE.txt
 echo "version = $VERSION" >> $OUTPUT_DIR/RELEASE.txt
 echo "pontoon-rev = $(git rev-parse HEAD)" >> $OUTPUT_DIR/RELEASE.txt
