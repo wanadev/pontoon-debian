@@ -5,8 +5,13 @@ Release Details
 ---------------
 
 * Migration from: :doc:`./pontoon-v2025.04.09`
-* Built from commit: `fdd4dd1d9bc4dd407b563fe1bc21cd479a5d2b7a <https://github.com/mozilla/pontoon/commit/fdd4dd1d9bc4dd407b563fe1bc21cd479a5d2b7a>`_
-* Tarball URL: https://github.com/wanadev/pontoon-debian/releases/download/v2025.11.05.0/pontoon_2025.11.05.0.tar.gz
+* Built from commit: `fdd4dd1d9bc4dd407b563fe1bc21cd479a5d2b7a <https://github.com/mozilla/pontoon/commit/fdd4dd1d9bc4dd407b563fe1bc21cd479a5d2b7a>`_ with a patch: `20251106_00_fix_migration_0081.patch <https://github.com/wanadev/pontoon-debian/blob/master/debian/patches/20251106_00_fix_migration_0081.patch>`__
+* Tarball URL: https://github.com/wanadev/pontoon-debian/releases/download/v2025.11.05.1/pontoon_2025.11.05.1.tar.gz
+
+
+.. warning::
+
+   Be sure to use the ``2025.11.05.1`` release and not the ``2025.11.05.0`` one; it fixes a database migration issue with PostgreSQL 17.
 
 
 Migration Instructions
