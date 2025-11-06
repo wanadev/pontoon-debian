@@ -1,0 +1,12 @@
+diff -ruN pontoon-2025.11.05.0/pontoon/base/migrations/0081_fix_android_spaces.py pontoon-2025.11.05.1/pontoon/base/migrations/0081_fix_android_spaces.py
+--- pontoon-2025.11.05.0/pontoon/base/migrations/0081_fix_android_spaces.py	2025-11-05 14:58:43.074489883 +0100
++++ pontoon-2025.11.05.1/pontoon/base/migrations/0081_fix_android_spaces.py	2025-11-06 10:30:38.124617948 +0100
+@@ -16,7 +16,7 @@
+     FROM base_translationmemoryentry m
+     JOIN base_translation t ON t.id = m.translation_id
+     WHERE
+-        m.target SIMILAR TO '%[^\S \n]%' AND
++        m.target SIMILAR TO '%[^[^[:space:]] \n]%' AND
+         t.string != m.target
+ )
+ UPDATE base_translation AS t
