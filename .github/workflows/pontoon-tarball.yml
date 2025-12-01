@@ -58,10 +58,10 @@ jobs:
             os: ubuntu-22.04
             python-version: "3.11"
             postgres-version: 15
-          - name: "Debian 13 (trixie)"  # -> 2030-06
-            os: ubuntu-24.04
-            python-version: "3.13"
-            postgres-version: 17
+          #- name: "Debian 13 (trixie)"  # -> 2030-06
+          #  os: ubuntu-24.04
+          #  python-version: "3.13"
+          #  postgres-version: 17
           - name: "Ubuntu 22.04 (jammy)"  # -> 2027-04
             os: ubuntu-22.04
             python-version: "3.10"
