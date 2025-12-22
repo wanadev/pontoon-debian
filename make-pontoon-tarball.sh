@@ -6,7 +6,7 @@
 #  VERSION: The version of the Pontoon Debian release (default: date +%Y.%m.%d.0)
 
 PONTOON_REV=$1
-test -a "$PONTOON_REV" && PONTOON_REV=$_PONTOON_REV
+test -z "$PONTOON_REV" && PONTOON_REV=$_PONTOON_REV
 test -z "$PONTOON_REV" && PONTOON_REV=main
 VERSION=$2
 test -z "$VERSION" && VERSION=$_VERSION
