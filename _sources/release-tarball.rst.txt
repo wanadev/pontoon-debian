@@ -36,9 +36,9 @@ Building Pontoon Debian Tarball
 
 Requirements:
 
-* Debian 12 or Ubuntu 24.04 (Ubuntu 22.04 will also work but only with an updated Node.js version)
-* Python >= 3.10 (3.11 recommanded)
-* Node.js >= 18
+* Debian 12 or Ubuntu 24.04
+* Python >= 3.11
+* Node.js >= 20
 
 First install some dependencies::
 

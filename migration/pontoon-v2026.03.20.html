@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pontoon Debian v2021.03.23 &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
+  <title>Pontoon Debian v2026.03.20 &mdash; Pontoon Debian Administrator&#39;s Manual  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Frequently Asked Questions" href="../faq.html" />
-    <link rel="prev" title="Pontoon Debian v2021.09.23" href="pontoon-v2021.09.23.html" /> 
+    <link rel="next" title="Pontoon Debian v2025.11.05" href="pontoon-v2025.11.05.html" />
+    <link rel="prev" title="Migration Guide" href="migration.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,7 +50,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../backup.html">Backuping and Restoring Pontoon</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Updating Pontoon</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="migration.html">Migration Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pontoon-v2026.03.20.html">Pontoon Debian v2026.03.20</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pontoon Debian v2026.03.20</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#release-details">Release Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#migration-instructions">Migration Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changelog">Changelog</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#breaking-changes">⚠️ Breaking changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#important-changes">Important changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#all-changes">All changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2025.11.05.html">Pontoon Debian v2025.11.05</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2025.04.09.html">Pontoon Debian v2025.04.09</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2024.12.13.html">Pontoon Debian v2024.12.13</a></li>
@@ -65,11 +75,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2022.02.09.html">Pontoon Debian v2022.02.09</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.12.06.html">Pontoon Debian v2021.12.06</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.09.23.html">Pontoon Debian v2021.09.23</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Pontoon Debian v2021.03.23</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#release-details">Release Details</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#migration-instructions">Migration Instructions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="pontoon-v2021.03.23.html">Pontoon Debian v2021.03.23</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
@@ -92,9 +98,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Updating Pontoon</a></li>
-      <li class="breadcrumb-item active">Pontoon Debian v2021.03.23</li>
+      <li class="breadcrumb-item active">Pontoon Debian v2026.03.20</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/migration/pontoon-v2021.03.23.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/migration/pontoon-v2026.03.20.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -102,22 +108,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="pontoon-debian-v2021-03-23">
-<h1>Pontoon Debian v2021.03.23<a class="headerlink" href="#pontoon-debian-v2021-03-23" title="Link to this heading"></a></h1>
+  <section id="pontoon-debian-v2026-03-20">
+<h1>Pontoon Debian v2026.03.20<a class="headerlink" href="#pontoon-debian-v2026-03-20" title="Link to this heading"></a></h1>
 <section id="release-details">
 <h2>Release Details<a class="headerlink" href="#release-details" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>Migration from: None</p></li>
-<li><p>Built from commit: <a class="reference external" href="https://github.com/mozilla/pontoon/commit/c5641aadcf0ed2aed60add757a50ab9c2a2f81d5">c5641aadcf0ed2aed60add757a50ab9c2a2f81d5</a></p></li>
-<li><p>Tarball URL: <a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases/download/v2021.03.23.0/pontoon_2021.03.23.0.tar.gz">https://github.com/wanadev/pontoon-debian/releases/download/v2021.03.23.0/pontoon_2021.03.23.0.tar.gz</a></p></li>
+<li><p>Migration from: <a class="reference internal" href="pontoon-v2025.11.05.html"><span class="doc">Pontoon Debian v2025.11.05</span></a></p></li>
+<li><p>Built from commit: <a class="reference external" href="https://github.com/mozilla/pontoon/commit/403b44ca0d944948391c66cf6604b6ec10fac942">403b44ca0d944948391c66cf6604b6ec10fac942</a></p></li>
+<li><p>Tarball URL: <a class="reference external" href="https://github.com/wanadev/pontoon-debian/releases/download/v2026.03.20.0/pontoon_2026.03.20.0.tar.gz">https://github.com/wanadev/pontoon-debian/releases/download/v2026.03.20.0/pontoon_2026.03.20.0.tar.gz</a></p></li>
 </ul>
 </section>
 <section id="migration-instructions">
 <h2>Migration Instructions<a class="headerlink" href="#migration-instructions" title="Link to this heading"></a></h2>
-<p>This is the first Pontoon Debian release, so there is no migration instruction. Just follow the installation guide:</p>
+<p>There is no specific migration instruction, just follow the <a class="reference internal" href="migration.html"><span class="doc">Migration Guide</span></a>.</p>
+</section>
+<section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<section id="breaking-changes">
+<h3>⚠️ Breaking changes<a class="headerlink" href="#breaking-changes" title="Link to this heading"></a></h3>
+<p>Ubuntu 22.04 no more supported:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../install/index.html"><span class="doc">Installing Pontoon on Debian and Ubuntu</span></a></p></li>
+<li><p>Pontoon dependancies are no more compatible with Python 3.10.</p></li>
 </ul>
+<p>GraphQL API removed:</p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="https://github.com/mozilla/pontoon/pull/3825">PR #3825</a></p></li>
+<li><p>Replacement: <a class="reference external" href="https://github.com/mozilla/pontoon/blob/99e4b86/pontoon/api/README.md">REST API v2 documentation</a></p></li>
+</ul>
+<p>Last part of REST API v1 removed:</p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="https://github.com/mozilla/pontoon/pull/3837">PR #3837</a></p></li>
+<li><p>Replacement: <a class="reference external" href="https://github.com/mozilla/pontoon/blob/99e4b86/pontoon/api/README.md">REST API v2 documentation</a></p></li>
+</ul>
+<p>Raygun support removed from Pontoon, <code class="docutils literal notranslate"><span class="pre">RAYGUN_APIKEY</span></code> setting removed from config.</p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="https://github.com/mozilla/pontoon/issues/3919">issue #3919</a></p></li>
+</ul>
+</section>
+<section id="important-changes">
+<h3>Important changes<a class="headerlink" href="#important-changes" title="Link to this heading"></a></h3>
+<p>New settings available:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># If using a reverse proxy, set to &quot;True&quot; to make django-allauth redirect_url</span>
+<span class="c1"># work as expected.  Default value is &quot;False&quot;.</span>
+<span class="nv">USE_X_FORWARDED_HOST</span><span class="o">=</span>False
+
+<span class="c1"># Path to a Google Cloud service account JSON key file used by Google client</span>
+<span class="c1"># libraries for authentication (optional).</span>
+<span class="nv">GOOGLE_APPLICATION_CREDENTIALS</span><span class="o">=</span>
+</pre></div>
+</div>
+</section>
+<section id="all-changes">
+<h3>All changes<a class="headerlink" href="#all-changes" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/mozilla/pontoon/compare/fdd4dd1d9bc4dd407b563fe1bc21cd479a5d2b7a...403b44ca0d944948391c66cf6604b6ec10fac942">https://github.com/mozilla/pontoon/compare/fdd4dd1d9bc4dd407b563fe1bc21cd479a5d2b7a…403b44ca0d944948391c66cf6604b6ec10fac942</a></p>
+</section>
 </section>
 </section>
 
@@ -125,8 +169,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pontoon-v2021.09.23.html" class="btn btn-neutral float-left" title="Pontoon Debian v2021.09.23" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="migration.html" class="btn btn-neutral float-left" title="Migration Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pontoon-v2025.11.05.html" class="btn btn-neutral float-right" title="Pontoon Debian v2025.11.05" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

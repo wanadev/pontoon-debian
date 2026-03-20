@@ -64,8 +64,7 @@ Finally, create the virtualenv::
 
 And install the dependencies::
 
-    pip install -r requirements.txt        # Python >= 3.11
-    pip install -r requirements.py310.txt  # Python 3.10 (Ubuntu 22.04)
+    pip install -r requirements.txt
 
 .. WARNING::
 
