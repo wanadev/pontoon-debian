@@ -23,7 +23,7 @@ Changelog
 
 Ubuntu 22.04 no more supported:
 
-* Pontoon dependancies are no more compatible with Python 3.10.
+* Pontoon dependencies are no more compatible with Python 3.10.
 
 GraphQL API removed:
 
